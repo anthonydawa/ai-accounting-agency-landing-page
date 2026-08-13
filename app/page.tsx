@@ -5,30 +5,6 @@ import { FormEvent, useState } from "react";
 const bookingUrl = "https://calendar.app.google/gN5dqSemjJaRcWRg7";
 const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-const outcomes = [
-  {
-    number: "01",
-    metric: "Lower operating drag",
-    title: "More capacity. Less administrative cost.",
-    text: "Reduce the recurring labor spent moving information between systems, rebuilding spreadsheets, processing documents, and repeating routine accounting tasks.",
-    items: ["Fewer manual touchpoints", "Less repetitive processing", "More staff capacity"],
-  },
-  {
-    number: "02",
-    metric: "Faster decisions",
-    title: "See what is happening sooner.",
-    text: "Turn scattered financial data into timely reporting, cash-flow visibility, and performance insights so leaders can respond before problems become expensive.",
-    items: ["Quicker reporting cycles", "Earlier cash-flow signals", "Current performance visibility"],
-  },
-  {
-    number: "03",
-    metric: "Stronger control",
-    title: "Fewer errors. Less rework.",
-    text: "Build repeatable workflows that flag exceptions, reduce duplicate entry, and create a clearer trail across accounting, commissions, payroll, and documents.",
-    items: ["Automatic exception flags", "More consistent processes", "Clearer audit trails"],
-  },
-];
-
 const faqs = [
   {
     q: "Do we have to replace the tools we already use?",
@@ -78,7 +54,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <a className="button" href={bookingUrl} target="_blank" rel="noreferrer">View live availability <span>↗</span></a>
-              <a className="text-link" href="#results">See the outcomes <span>↓</span></a>
+              <a className="text-link" href="#results">See a client use case <span>↓</span></a>
             </div>
             <div className="trust-line" aria-label="Company qualifications">
               <span>Licensed CPA</span><i />
@@ -143,24 +119,6 @@ export default function Home() {
 
       <section className="services section" id="results">
         <div className="shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Results that matter</p>
-              <h2>Spend less effort running<br />the back office.</h2>
-            </div>
-          </div>
-          <div className="service-grid">
-            {outcomes.map((outcome) => (
-              <article className="service-card" key={outcome.number}>
-                <div className="service-topline"><span>{outcome.number}</span><strong>{outcome.metric}</strong></div>
-                <h3>{outcome.title}</h3>
-                <p>{outcome.text}</p>
-                <ul>
-                  {outcome.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
           <div className="client-case">
             <div className="case-heading">
               <div>

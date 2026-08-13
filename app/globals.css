@@ -148,29 +148,11 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .section-label { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .14em; }
 .problem { display: grid; grid-template-columns: 190px 1fr; gap: 70px; }
 .problem-copy { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: end; }
-.problem h2, .section-heading h2, .about h2, .booking h2, .faq h2, footer h2 { margin: 0; font-size: clamp(42px, 4.8vw, 68px); line-height: 1; letter-spacing: -.055em; }
+.problem h2, .about h2, .booking h2, .faq h2, footer h2 { margin: 0; font-size: clamp(42px, 4.8vw, 68px); line-height: 1; letter-spacing: -.055em; }
 .problem-copy p { font-size: 17px; line-height: 1.68; color: var(--muted); margin: 0 0 14px; }
 .problem-copy .emphasis { color: var(--ink); font-weight: 800; }
 
 .services { background: #eaf5f3; border-block: 1px solid #cfe1de; }
-.section-heading { margin-bottom:54px; }
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #bcd3d0; }
-.service-card { padding: 38px 34px 36px; min-height: 410px; background: rgba(255,255,255,.42); position: relative; }
-.service-card + .service-card { border-left: 1px solid #bcd3d0; }
-.service-card::after { content:""; position:absolute; left:0; bottom:0; width:0; height:5px; background:var(--coral); transition:width .3s ease; }
-.service-card:hover::after { width:100%; }
-.service-topline { display:flex; justify-content:space-between; align-items:center; gap:18px; min-height:18px; margin-bottom:52px; }
-.service-topline span { font:700 12px/1 monospace; color:var(--teal); }
-.service-topline strong { color:var(--coral); font-size:10px; line-height:1.2; letter-spacing:.08em; text-transform:uppercase; text-align:right; }
-.service-card h3 { margin: 0 0 18px; font-size: 28px; line-height: 1.08; letter-spacing: -.04em; }
-.service-card > p { color: var(--muted); line-height: 1.55; font-size: 15px; }
-.service-card ul { list-style: none; padding: 0; margin: 30px 0 0; border-top: 1px solid #c6d9d7; }
-.service-card li { padding: 11px 0; border-bottom: 1px solid #c6d9d7; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
-.service-card li::before { content:"+"; color: var(--coral); margin-right: 9px; }
-.use-case { margin-top:70px; border:1px solid #b7cfcc; background:var(--paper); box-shadow:0 30px 90px rgba(7,27,46,.09); overflow:hidden; }
-.use-case-heading { padding:42px; display:grid; grid-template-columns:1.15fr .85fr; gap:70px; align-items:end; border-bottom:1px solid #c7dad7; background:linear-gradient(135deg, #fffdf8 0%, #eef8f6 100%); }
-.use-case-heading h3 { margin:0; color:var(--navy); font-size:clamp(38px,4.2vw,58px); line-height:.98; letter-spacing:-.055em; }
-.use-case-heading > p { margin:0; color:var(--muted); font-size:15px; line-height:1.65; }
 .commission-flow { padding:42px 32px; display:grid; grid-template-columns:1fr 48px 1fr 48px 1fr 48px 1fr; align-items:stretch; background:var(--navy); color:var(--ivory); position:relative; }
 .commission-flow::before { content:""; position:absolute; inset:0; opacity:.13; background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px); background-size:42px 42px; }
 .flow-step { min-height:330px; padding:26px 22px; border:1px solid rgba(115,223,216,.25); background:rgba(7,27,46,.89); position:relative; z-index:1; transition:transform .25s ease,border-color .25s ease; }
@@ -222,7 +204,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .reuse-tags { max-width:480px; display:flex; flex-wrap:wrap; justify-content:flex-end; gap:7px; }
 .reuse-tags span { padding:8px 10px; border:1px solid #b7cfcc; color:var(--teal); background:#f3faf8; font-size:8px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
 
-.client-case { margin-top:72px; border:1px solid #b7cfcc; background:#fffdf8; box-shadow:0 34px 100px rgba(7,27,46,.11); overflow:hidden; }
+.client-case { border:1px solid #b7cfcc; background:#fffdf8; box-shadow:0 34px 100px rgba(7,27,46,.11); overflow:hidden; }
 .case-heading { padding:48px; display:grid; grid-template-columns:1.2fr .8fr; gap:75px; align-items:end; background:#fffdf8; }
 .case-badge { display:inline-flex; align-items:center; gap:9px; margin:0 0 18px; color:var(--coral); font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
 .case-badge span { width:8px; height:8px; border-radius:50%; background:var(--coral); box-shadow:0 0 0 6px rgba(255,107,94,.13); }
@@ -416,13 +398,8 @@ footer::after { content:""; position:absolute; z-index:-1; inset:-35%; backgroun
   .hero-grid { grid-template-columns:1fr; padding-top:80px; padding-bottom:42px; }
   .hero-media { min-height:500px; }
   .portrait-collage { max-width:500px; }
-  .problem, .problem-copy, .section-heading, .about-grid, .faq { grid-template-columns:1fr; gap:45px; }
+  .problem, .problem-copy, .about-grid, .faq { grid-template-columns:1fr; gap:45px; }
   .problem { gap:30px; }
-  .service-grid { grid-template-columns:1fr; }
-  .service-card { min-height:0; }
-  .service-card + .service-card { border-left:0; border-top:1px solid #bcd3d0; }
-  .service-topline { margin-bottom:30px; }
-  .use-case-heading { grid-template-columns:1fr; gap:25px; }
   .commission-flow { grid-template-columns:1fr; gap:0; }
   .flow-step { min-height:0; }
   .flow-connector { min-height:54px; }
@@ -469,19 +446,15 @@ footer::after { content:""; position:absolute; z-index:-1; inset:-35%; backgroun
   .portrait-caption-floating strong { font-size:13px; }
   .portrait-proof { right:0; bottom:8px; width:92px; height:92px; }
   .portrait-proof strong { font-size:29px; }
-  .problem h2, .section-heading h2, .about h2, .booking h2, .faq h2, footer h2 { font-size:42px; }
+  .problem h2, .about h2, .booking h2, .faq h2, footer h2 { font-size:42px; }
   .transformation-heading h2 { font-size:45px; }
   .transformation-heading { margin-bottom:48px; }
   .impact-card { padding:28px 24px; }
   .transformation-cta { padding:25px 22px; }
-  .service-card { padding:30px 25px; }
-  .use-case { margin-top:48px; }
-  .use-case-heading { padding:31px 24px; }
   .commission-flow { padding:25px 20px; }
   .commission-controls { grid-template-columns:1fr; }
   .commission-controls > div:nth-child(odd) { border-left:0; }
   .workflow-reuse { padding:25px 22px; }
-  .client-case { margin-top:48px; }
   .case-heading { padding:34px 24px; }
   .case-heading h3 { font-size:40px; }
   .case-before,.case-after { padding:31px 23px; }
