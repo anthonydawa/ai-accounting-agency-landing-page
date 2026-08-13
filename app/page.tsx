@@ -148,11 +148,6 @@ export default function Home() {
               <p className="eyebrow">Results that matter</p>
               <h2>Spend less effort running<br />the back office.</h2>
             </div>
-            <p>
-              The work is measured by what changes for the business: less administrative
-              effort, quicker access to useful information, fewer preventable errors,
-              and more capacity to focus on growth.
-            </p>
           </div>
           <div className="service-grid">
             {outcomes.map((outcome) => (

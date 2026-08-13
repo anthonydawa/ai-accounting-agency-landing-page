@@ -153,9 +153,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .problem-copy .emphasis { color: var(--ink); font-weight: 800; }
 
 .services { background: #eaf5f3; border-block: 1px solid #cfe1de; }
-.section-heading { display: grid; grid-template-columns: 1.35fr .65fr; gap: 80px; align-items: end; margin-bottom: 54px; }
-.section-heading > p { margin:0; padding:25px 27px 25px 31px; color:var(--ink); background:rgba(255,253,248,.88); border-left:4px solid var(--coral); box-shadow:0 18px 45px rgba(7,27,46,.08); font-size:17px; line-height:1.65; position:relative; }
-.section-heading > p::before { content:"What success looks like"; display:block; margin-bottom:10px; color:var(--teal); font-size:9px; line-height:1; font-weight:900; letter-spacing:.13em; text-transform:uppercase; }
+.section-heading { margin-bottom:54px; }
 .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #bcd3d0; }
 .service-card { padding: 38px 34px 36px; min-height: 410px; background: rgba(255,255,255,.42); position: relative; }
 .service-card + .service-card { border-left: 1px solid #bcd3d0; }
