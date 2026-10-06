@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 export const dynamic = "force-static";
 export const alt =
-  "Sales Commission by AI Accounting Agency — less commission confusion, more clarity.";
+  "Sales Commission by AI Accounting Agency. The deal is signed. The commission should be clear.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function OpenGraphImage() {
@@ -11,67 +11,50 @@ export default function OpenGraphImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#ffffff",
-          color: "#071b2e",
           display: "flex",
           flexDirection: "column",
-          padding: "66px 76px",
+          background: "#ffffff",
+          color: "#102b3c",
+          padding: "60px 72px",
           fontFamily: "sans-serif",
-          borderBottom: "14px solid #12a6a6",
+          borderBottom: "8px solid #087b7c",
         }}
       >
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            fontSize: 24,
+            fontSize: 22,
+            paddingBottom: 26,
+            borderBottom: "1px solid #d9e2e4",
           }}
         >
-          <span style={{ fontWeight: 700 }}>AI Accounting Agency</span>
+          <span>AI Accounting Agency</span>
           <span style={{ color: "#087b7c" }}>Sales Commission</span>
         </div>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            marginTop: 70,
-            fontWeight: 700,
-            fontSize: 76,
+            marginTop: 60,
+            fontSize: 72,
+            lineHeight: 1.13,
             letterSpacing: "-3px",
-            lineHeight: 1.08,
           }}
         >
-          <span>Less commission</span>
-          <span style={{ color: "#087b7c" }}>confusion.</span>
-          <span>More clarity.</span>
+          <span>The deal is signed.</span>
+          <span>The commission</span>
+          <span style={{ color: "#087b7c" }}>should be clear.</span>
         </div>
         <div
           style={{
             display: "flex",
-            marginTop: 32,
-            color: "#587083",
-            fontSize: 23,
+            marginTop: 35,
+            fontSize: 21,
+            color: "#586c75",
           }}
         >
-          Contracts. Earnings. Payout schedules. One connected workflow.
-        </div>
-        <div
-          style={{
-            display: "flex",
-            position: "absolute",
-            right: 80,
-            bottom: 110,
-            width: 72,
-            height: 72,
-            borderRadius: 36,
-            background: "#ffede8",
-            color: "#b55245",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 43,
-          }}
-        >
-          ↗
+          Contracts, earnings, and payout schedules in one connected workflow.
         </div>
       </div>
     ),

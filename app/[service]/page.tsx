@@ -34,7 +34,7 @@ export default async function ServicePage({
         <Link className="back-link" href="/#services">
           ← All services
         </Link>
-        <p className="eyebrow">Financial workflows · {record.number}</p>
+        <p className="eyebrow">The broader practice</p>
         <h1>{record.title}</h1>
         <p>{record.description}</p>
         <a
@@ -50,9 +50,8 @@ export default async function ServicePage({
         className="shell service-detail-grid"
         aria-label="Service capabilities"
       >
-        {record.items.map((item, i) => (
+        {record.items.map((item) => (
           <article key={item.title}>
-            <span className="service-number">0{i + 1}</span>
             <h2>{item.title}</h2>
             <p>{item.text}</p>
           </article>
@@ -61,11 +60,7 @@ export default async function ServicePage({
       <section className="shell service-next">
         <div>
           <p className="eyebrow">Built around your business</p>
-          <h2>
-            Start with the process.
-            <br />
-            Build the right workflow.
-          </h2>
+          <h2>Let’s look at how the work moves.</h2>
           <p>
             We review your tools, handoffs, and controls before recommending a
             setup.

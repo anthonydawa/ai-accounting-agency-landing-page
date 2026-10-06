@@ -14,55 +14,37 @@ export function ContactSection() {
   return (
     <section className="booking section" id="contact">
       <div className="shell">
-        <div className="booking-heading">
-          <p className="eyebrow">Your next step</p>
-          <h2>
-            Let’s simplify
-            <br />
-            <span>your next payout cycle.</span>
-          </h2>
-          <p>
-            Start with Sales Commission, or tell us which financial workflow
-            needs attention.
-          </p>
-        </div>
         <div className="conversion-grid">
-          <div className="calendar-card">
-            <div className="card-kicker">
-              <span className="pulse" /> LET’S TALK
-            </div>
-            <h3>See what’s possible for your team.</h3>
+          <div className="contact-invitation">
+            <p className="eyebrow">Let’s talk about your process</p>
+            <h2>
+              Bring the questions.
+              <br />
+              <em>And the spreadsheet.</em>
+            </h2>
             <p>
-              Walk us through your commission process. We’ll discuss your rules,
-              reporting needs, and the right next step.
+              Walk us through your commission process, or the financial workflow
+              that needs attention. We’ll discuss the rules, reporting needs,
+              and a practical next step.
             </p>
-            <div className="calendar-placeholder">
-              <div className="calendar-icon">
-                <span>↗</span>
-                <small>BOOK</small>
-              </div>
-              <div>
-                <strong>A conversation, built around you.</strong>
-                <p>Choose a time from our Google Calendar booking page.</p>
-              </div>
-            </div>
-            <div className="calendar-benefits">
-              <span>✓ Review your current workflow</span>
-              <span>✓ See how Sales Commission works</span>
-              <span>✓ Discuss scope and implementation</span>
-            </div>
             <a
-              className="button full"
+              className="button"
               href={bookingUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Book a consultation ↗
+              Choose a time to talk
             </a>
-            <div className="booking-note">Opens Google Calendar</div>
+            <p className="booking-note">Booking opens in Google Calendar.</p>
+            <div className="contact-direct">
+              <span>Prefer to write?</span>
+              <a href="mailto:info@aiaccountingagency.com">
+                info@aiaccountingagency.com
+              </a>
+            </div>
           </div>
           <div className="form-card">
-            <div className="card-kicker">PREFER EMAIL?</div>
+            <p className="eyebrow">An introduction by email</p>
             <h3>Tell us what you have in mind.</h3>
             <form onSubmit={prepareDraft} onChange={() => setDraftUrl("")}>
               <label>
@@ -112,7 +94,7 @@ export function ContactSection() {
                 />
               </label>
               <button className="button full" type="submit">
-                Prepare my email ↗
+                Prepare my email
               </button>
               <small>
                 Creates an email draft for you to review and send in your email
@@ -121,7 +103,7 @@ export function ContactSection() {
               {draftUrl && (
                 <div className="email-ready" role="status">
                   <strong>Your email draft is ready.</strong>
-                  <a href={draftUrl}>Open draft in my email app ↗</a>
+                  <a href={draftUrl}>Open draft in my email app</a>
                   <small>
                     Nothing has been sent. You can also email{" "}
                     <a href="mailto:info@aiaccountingagency.com">

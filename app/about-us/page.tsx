@@ -12,11 +12,7 @@ export default function AboutPage() {
     <main id="main-content">
       <section className="page-intro shell">
         <p className="eyebrow">About AI Accounting Agency</p>
-        <h1>
-          Accounting expertise.
-          <br />
-          <span>A forward-looking approach.</span>
-        </h1>
+        <h1>Meet Angela Hernandez.</h1>
         <p>
           We help businesses connect financial information, strengthen controls,
           and turn recurring work into dependable workflows.
@@ -34,7 +30,11 @@ export default function AboutPage() {
         </div>
         <div>
           <p className="eyebrow">Our founder</p>
-          <h2>Experience you can build on.</h2>
+          <h2>
+            An accountant’s perspective
+            <br />
+            on the work behind the numbers.
+          </h2>
           <p>
             Angela Hernandez brings more than 20 years of experience in
             financial strategy and operational leadership. A licensed CPA with
@@ -46,11 +46,7 @@ export default function AboutPage() {
             automation. We build around the people, processes, and tools that
             keep your business running, with financial judgment at the center.
           </p>
-          <div className="credential-row">
-            <span>Licensed CPA</span>
-            <span>MBA</span>
-            <span>20+ years of experience</span>
-          </div>
+
           <a
             className="text-link dark"
             href={bookingUrl}
@@ -64,15 +60,10 @@ export default function AboutPage() {
       <section className="principles section shell">
         <div className="section-heading">
           <p className="eyebrow">Our approach</p>
-          <h2>
-            Useful technology.
-            <br />
-            Dependable financial operations.
-          </h2>
+          <h2>How we approach the work.</h2>
         </div>
         <div className="service-detail-grid">
           <article>
-            <span className="service-number">01</span>
             <h3>Understand the business</h3>
             <p>
               Start with how information moves today and where the process loses
@@ -80,7 +71,6 @@ export default function AboutPage() {
             </p>
           </article>
           <article>
-            <span className="service-number">02</span>
             <h3>Build with controls</h3>
             <p>
               Make rules, review steps, and exceptions part of the workflow from
@@ -88,7 +78,6 @@ export default function AboutPage() {
             </p>
           </article>
           <article>
-            <span className="service-number">03</span>
             <h3>Keep it practical</h3>
             <p>
               Focus on repeatable systems that your team can understand and use

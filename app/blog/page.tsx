@@ -13,9 +13,9 @@ export default function BlogPage() {
       <section className="page-intro shell">
         <p className="eyebrow">The agency journal</p>
         <h1>
-          Better workflows.
+          Notes from
           <br />
-          <span>Fresh perspectives.</span>
+          <em>the practice.</em>
         </h1>
         <p>
           Practical ideas on commissions, accounting, and the systems behind a

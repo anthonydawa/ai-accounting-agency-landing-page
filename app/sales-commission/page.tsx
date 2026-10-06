@@ -17,9 +17,9 @@ export default function ProductPage() {
           <div className="hero-copy">
             <p className="eyebrow">Our first product · Sales Commission</p>
             <h1>
-              From contract.
+              Every commission
               <br />
-              <span>To clarity.</span>
+              has a <em>backstory.</em>
             </h1>
             <p className="hero-lede">
               A connected commission workspace for the people who sell, review,
@@ -33,10 +33,10 @@ export default function ProductPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Book a product walkthrough ↗
+                Book a product walkthrough
               </a>
               <a className="text-link dark" href="#workflow">
-                Explore the workflow ↓
+                Explore the workflow
               </a>
             </div>
           </div>
@@ -49,9 +49,9 @@ export default function ProductPage() {
         <div className="section-heading">
           <p className="eyebrow">One connected workspace</p>
           <h2>
-            See the details.
+            The details your team
             <br />
-            <span>Understand the bigger picture.</span>
+            <em>comes back to.</em>
           </h2>
         </div>
         <div className="service-detail-grid">
@@ -80,9 +80,8 @@ export default function ProductPage() {
               "A setup built around you",
               "Start with a review of your commission rules, data sources, and reporting process.",
             ],
-          ].map(([title, text], i) => (
+          ].map(([title, text]) => (
             <article key={title}>
-              <span className="service-number">0{i + 1}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>

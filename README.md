@@ -1,6 +1,6 @@
 # AI Accounting Agency Website
 
-A Sales Commission-led redesign of the original landing page, using the existing navy, teal, coral, logo, founder portrait, large typography, and animated workflow illustration on predominantly white backgrounds.
+A Sales Commission-led redesign of the original landing page, using the existing navy, teal, coral, logo, founder portrait, editorial typography, and accounting working papers on predominantly white backgrounds.
 
 ## Preview and validation
 
@@ -24,7 +24,7 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 
 ## Site structure
 
-- Home: product hero, benefits, original animated commission workflow, secondary services, founder introduction, articles, contact, FAQs.
+- Home: product hero, benefits, commission review file, secondary services, founder introduction, articles, contact, FAQs.
 - `/sales-commission/`: dedicated product page.
 - `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: existing service categories and paths.
 - `/about-us/`: company and founder page.
@@ -45,11 +45,11 @@ An existing article can instead use `externalUrl` to link to its current publish
 
 ## Content sources
 
-- Design, brand assets, animated commission workflow, booking URL: original GitHub landing-page source.
+- Brand assets, original page structure, booking URL: original GitHub landing-page source.
 - Service categories and capabilities: the current aiaccountingagency.com service pages.
 - Founder background and qualifications: the current About Us page.
 - Four article summaries, dates, and destinations: the current article archive, verified on October 6, 2026.
-- Product capabilities: the existing Sales Commission dashboard implementation. The homepage dashboard graphic is an illustration, not live customer data.
+- Product capabilities: the existing Sales Commission dashboard implementation. The contract and calculation example uses clearly labeled illustrative amounts.
 
 The contact section uses the original Google booking link and offers an email draft addressed to `info@aiaccountingagency.com`. The form builds the draft locally; visitors explicitly open their email app to review and send it. There is no hosted form endpoint or automatic submission confirmation.
 

@@ -1,196 +1,79 @@
 export function CommissionCase() {
   return (
-    <section className="services section" id="workflow">
-      <div className="shell">
-        <div className="client-case">
-          <div className="case-heading">
+    <section className="workflow section" id="workflow">
+      <div className="shell workflow-layout">
+        <div className="workflow-intro">
+          <p className="eyebrow">Inside the workflow</p>
+          <h2>The record behind the payout.</h2>
+          <p>
+            A payout amount is only useful when your team can trace it back to
+            the agreement. Sales Commission connects that information in one
+            workspace.
+          </p>
+          <p className="margin-note">
+            The details matter:
+            <br />a signed deal and a payable commission are different events.
+          </p>
+        </div>
+        <div className="workflow-record">
+          <div className="record-heading">
+            <span>Commission review file</span>
+            <span>From source to schedule</span>
+          </div>
+          <dl>
             <div>
-              <p className="case-badge">
-                <span /> The workflow in practice
-              </p>
-              <h2>
-                From commission confusion
-                <br />
-                to one controlled workflow.
-              </h2>
-            </div>
-            <p>
-              A connected commission process brings together contract
-              information, commission rules, and payout timing. Here is how the
-              workflow fits together.
-            </p>
-          </div>
-
-          <div className="case-stage">
-            <aside className="case-before">
-              <p className="stage-label">Before automation</p>
-              <h3>Every payout cycle became an investigation.</h3>
-              <div className="paper-chaos" aria-hidden="true">
-                <div className="paper contract-paper">
-                  <span>CONTRACT</span>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="paper sheet-paper">
-                  <span>SPREADSHEET</span>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="paper warning-paper">
-                  <strong>?</strong>
-                  <span>Which terms apply?</span>
-                </div>
-              </div>
-              <ul>
-                <li>Some commissions released before they were eligible</li>
-                <li>Some earned commissions were overlooked</li>
-                <li>Manual calculations created inconsistent results</li>
-              </ul>
-            </aside>
-
-            <div
-              className="case-engine"
-              aria-label="AI Accounting Agency commission automation system"
-            >
-              <div className="engine-input">
-                <span className="mini-document" aria-hidden="true">
-                  <i />
-                  <i />
-                  <i />
-                </span>
+              <dt>Source</dt>
+              <dd>
+                <strong>The contract</strong>
                 <p>
-                  <small>Trigger</small>
-                  <strong>Signed contract</strong>
+                  Recorded services, deal value, salesperson, and relevant
+                  dates.
                 </p>
-              </div>
-              <div className="engine-stream" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </div>
-              <div className="engine-core">
-                <span className="engine-ring ring-one" aria-hidden="true" />
-                <span className="engine-ring ring-two" aria-hidden="true" />
-                <div className="engine-center">
-                  <small>Built-in</small>
-                  <strong>AI</strong>
-                  <span>Commission engine</span>
-                </div>
-                <div className="data-orbit data-one">Deal value</div>
-                <div className="data-orbit data-two">Salesperson</div>
-                <div className="data-orbit data-three">Rate + terms</div>
-                <div className="data-orbit data-four">Payout date</div>
-              </div>
-              <div className="rule-gate">
-                <span>Approved rules</span>
-                <i />
-                <strong>Compute · Validate · Route</strong>
-              </div>
+              </dd>
             </div>
-
-            <aside className="case-after">
-              <p className="stage-label">Controlled output</p>
-              <h3>One record shows what is owed, when, and why.</h3>
-              <div
-                className="payout-board"
-                aria-label="Example commission output"
-              >
-                <div className="board-top">
-                  <span>Commission register</span>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="board-row">
-                  <span>Contract data</span>
-                  <strong>Captured</strong>
-                </div>
-                <div className="board-row">
-                  <span>Commission</span>
-                  <strong>Calculated</strong>
-                </div>
-                <div className="board-row">
-                  <span>Payout timing</span>
-                  <strong>Verified</strong>
-                </div>
-                <div className="board-row flagged">
-                  <span>Exceptions</span>
-                  <strong>Human review</strong>
-                </div>
-              </div>
-              <div className="case-results">
-                <span>✓ Payout timing checked</span>
-                <span>✓ Exceptions surfaced</span>
-                <span>✓ Calculation support retained</span>
-              </div>
-            </aside>
-          </div>
-
-          <div className="control-ribbon">
-            <strong>Automation handles the repeatable work.</strong>
-            <span>
-              Any missing or conflicting term stops at a review gate before it
-              can affect the payout record.
-            </span>
-            <div className="shield-mark" aria-hidden="true">
-              <i>✓</i>
+            <div>
+              <dt>Basis</dt>
+              <dd>
+                <strong>The agreed rules</strong>
+                <p>
+                  Rates and terms that explain upfront and recurring earnings.
+                </p>
+              </dd>
             </div>
-          </div>
-
-          <div className="pattern-map">
-            <div className="pattern-copy">
-              <p className="eyebrow">One reusable finance pattern</p>
-              <h3>
-                The document changes.
-                <br />
-                The control system stays.
-              </h3>
-              <p>
-                The same structure can turn other document-heavy finance work
-                into an organized, reviewable process.
-              </p>
+            <div>
+              <dt>Calculation</dt>
+              <dd>
+                <strong>The commission breakdown</strong>
+                <p>
+                  Keep the components visible so finance can review the amount.
+                </p>
+              </dd>
             </div>
-            <div
-              className="pattern-illustration"
-              aria-label="Reusable automation pattern"
-            >
-              <div className="pattern-line" aria-hidden="true" />
-              <div className="pattern-node source-node">
-                <i />
-                <strong>Source</strong>
-                <span>Document or event</span>
-              </div>
-              <div className="pattern-node extract-node">
-                <i>AI</i>
-                <strong>Extract</strong>
-                <span>Required information</span>
-              </div>
-              <div className="pattern-node rules-node">
-                <i>✓</i>
-                <strong>Rules</strong>
-                <span>Validate and calculate</span>
-              </div>
-              <div className="pattern-node record-node">
-                <i />
-                <strong>Record</strong>
-                <span>Update the tracker</span>
-              </div>
-              <div className="pattern-node review-node">
-                <i>!</i>
-                <strong>Review</strong>
-                <span>Only exceptions</span>
-              </div>
+            <div>
+              <dt>Timing</dt>
+              <dd>
+                <strong>The payout schedule</strong>
+                <p>
+                  See scheduled commissions by pay date, separate from base
+                  salary.
+                </p>
+              </dd>
             </div>
-            <div className="pattern-examples">
-              <span>Vendor invoices</span>
-              <span>Payroll adjustments</span>
-              <span>Client onboarding</span>
-              <span>Recurring reporting</span>
-              <span>Document approvals</span>
+            <div>
+              <dt>Review</dt>
+              <dd>
+                <strong>A conversation with context</strong>
+                <p>
+                  Use the record and commission summary to discuss questions
+                  before payment.
+                </p>
+              </dd>
             </div>
-          </div>
+          </dl>
+          <p className="record-footnote">
+            Your commission rules, data sources, and review process shape the
+            setup.
+          </p>
         </div>
       </div>
     </section>

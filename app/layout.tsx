@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     shortcut: `${assetBasePath}/brand-logo.png`,
   },
   openGraph: {
-    title: "Less Commission Confusion. More Clarity.",
+    title: "The deal is signed. The commission should be clear.",
     description:
       "Sales Commission and CPA-led financial workflows by AI Accounting Agency.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Less Commission Confusion. More Clarity.",
+    title: "The deal is signed. The commission should be clear.",
     description:
       "Sales Commission and CPA-led financial workflows by AI Accounting Agency.",
   },

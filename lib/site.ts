@@ -7,7 +7,6 @@ export const siteUrl = (
 export const services = [
   {
     slug: "sales-accounting",
-    number: "01",
     title: "Sales & Accounting Operations",
     description:
       "Connect sales activity to your books, with less manual entry and clearer control over every transaction.",
@@ -32,7 +31,6 @@ export const services = [
   },
   {
     slug: "financial-reporting",
-    number: "02",
     title: "Financial Reporting & Analytics",
     description:
       "Turn disconnected numbers into useful visibility across cash flow, performance, and planning.",
@@ -57,7 +55,6 @@ export const services = [
   },
   {
     slug: "payroll-business",
-    number: "03",
     title: "Payroll & Business Processes",
     description:
       "Build dependable workflows for the recurring work that keeps your business moving.",

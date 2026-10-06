@@ -113,7 +113,7 @@ test("required pages, product messaging and working contact path are exported", 
   ])
     assert.ok(await exists(join(root, path)), `Missing page ${path}`);
   const html = await readFile(join(root, "index.html"), "utf8");
-  assert.ok(html.includes("Less commission"));
+  assert.ok(html.includes("Sales Commission"));
   assert.ok(html.includes("https://calendar.app.google/gN5dqSemjJaRcWRg7"));
   assert.ok(html.includes("Prepare my email"));
   assert.ok(!html.includes("Your form design is ready"));
