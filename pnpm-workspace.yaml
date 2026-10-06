@@ -1,0 +1,5 @@
+# The static Next.js build does not use these optional toolchain installers.
+allowBuilds:
+  esbuild: false
+  sharp: false
+  workerd: false

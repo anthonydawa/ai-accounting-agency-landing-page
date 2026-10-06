@@ -35,8 +35,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build static website
-        run: pnpm build
+      - name: Build and verify static website
+        run: pnpm test
         env:
           NEXT_PUBLIC_BASE_PATH: /ai-accounting-agency-landing-page
           NEXT_PUBLIC_SITE_URL: https://anthonydawa.github.io/ai-accounting-agency-landing-page/

@@ -1,39 +1,62 @@
-# AI Accounting Agency Landing Page
+# AI Accounting Agency Website
 
-A conversion-focused one-page landing page for AI Accounting Agency. It is built with Next.js and deployed as a static site on GitHub Pages.
+A Sales Commission-led redesign of the original landing page, using the existing navy, teal, coral, logo, founder portrait, large typography, and animated workflow illustration on predominantly white backgrounds.
 
-## Run locally
+## Preview and validation
 
-```bash
-pnpm install
-pnpm dev
+Requires Node 22.13 or newer.
+
+```sh
+pnpm install --frozen-lockfile
+npm run dev -- --port 3100
 ```
 
-Open `http://localhost:3000`.
+For a production preview:
 
-## Google Calendar booking
-
-All booking buttons are connected to the supplied Google Appointment Schedule:
-
-```text
-https://calendar.app.google/gN5dqSemjJaRcWRg7
+```sh
+npm test
+npm run preview
 ```
 
-The booking page uses the availability rules of its connected Google Calendar, removes unavailable times, sends the confirmation, and includes Google Meet information after booking. Google blocks its appointment page from being embedded on external domains, so the landing page opens the secure Google booking page in a new tab.
+Open http://localhost:3101. The preview serves the exported `out/` directory. `PORT` and `NEXT_PUBLIC_BASE_PATH` can be set for other ports or a GitHub Pages preview.
 
-The deployed build sets the final public URL and repository path automatically.
+`npm test` runs the production build and verifies article records, internal links, anchor destinations, required pages, and contact paths. `npm run typecheck` checks TypeScript.
 
-## Connect the inquiry form
+## Site structure
 
-The current form demonstrates the full interaction but does not send data externally. Connect `handleSubmit` in `app/page.tsx` to the selected form endpoint, CRM, or server action before launch.
+- Home: product hero, benefits, original animated commission workflow, secondary services, founder introduction, articles, contact, FAQs.
+- `/sales-commission/`: dedicated product page.
+- `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: existing service categories and paths.
+- `/about-us/`: company and founder page.
+- `/blog/`: searchable article library with category filters.
+- `/blog/[slug]/`: full local articles generated from the content collection.
+- Sitemap and a generated PNG social preview.
 
-Common options include:
+## Adding articles over time
 
-- A Next.js server action or API route
-- HubSpot, Jotform, or Typeform
-- Formspree or Basin
-- Zapier or Make webhook connected to a CRM or Google Sheet
+1. Copy the object in `content/article-template.json` into the array in `content/articles.json`.
+2. Use a unique lowercase, hyphenated slug. Add the title, category, summary, author, publication date, reading time, and sections.
+3. Leave `published: false` while drafting. Set it to `true` when the article is ready to appear on the site.
+4. Run `npm test`, review the article locally, and deploy the updated build.
 
-## GitHub Pages deployment
+Each section accepts a heading and an array of paragraphs. New categories appear automatically in the library. Published posts are sorted by date; the latest three appear on the homepage. Drafts are excluded from article pages and the sitemap. Publication is a manual flag, not a scheduled publishing system.
 
-Pushes to `main` trigger `.github/workflows/deploy-pages.yml`. The workflow exports the static Next.js site and publishes it through GitHub Pages. No database or authentication is required.
+An existing article can instead use `externalUrl` to link to its current published version. These cards say “Read original” and open in another tab. The new Sales Commission guide is draft copy for review as part of this website redesign; it is visible in the preview.
+
+## Content sources
+
+- Design, brand assets, animated commission workflow, booking URL: original GitHub landing-page source.
+- Service categories and capabilities: the current aiaccountingagency.com service pages.
+- Founder background and qualifications: the current About Us page.
+- Four article summaries, dates, and destinations: the current article archive, verified on October 6, 2026.
+- Product capabilities: the existing Sales Commission dashboard implementation. The homepage dashboard graphic is an illustration, not live customer data.
+
+The contact section uses the original Google booking link and offers an email draft addressed to `info@aiaccountingagency.com`. The form builds the draft locally; visitors explicitly open their email app to review and send it. There is no hosted form endpoint or automatic submission confirmation.
+
+## Deployment and domain migration
+
+The existing GitHub Pages workflow deploys only pushes to `main`. Review work stays on `codex/sales-commission-website-redesign` until it is merged. The workflow sets the repository base path and now runs the static link checks before publishing.
+
+For deployment at the root of aiaccountingagency.com, build without `GITHUB_ACTIONS=true` and set `NEXT_PUBLIC_SITE_URL=https://www.aiaccountingagency.com`. The site exports static files and can use the eventual selected hosting provider.
+
+Before replacing the Wix site at the main domain, migrate the remaining existing article archive and preserve its `/post/...` URLs, or configure redirects to migrated articles. The four source article links and archive link intentionally continue to use the current website during this design review; they depend on those Wix pages remaining available. The draft does not change DNS, replace Wix, or migrate the whole archive.

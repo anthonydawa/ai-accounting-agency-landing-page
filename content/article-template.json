@@ -1,0 +1,16 @@
+{
+  "slug": "your-article-slug",
+  "title": "Your article title",
+  "category": "Sales Commission",
+  "excerpt": "A short summary for the article cards and search engines.",
+  "date": "2026-10-06",
+  "readTime": "3 min read",
+  "author": "AI Accounting Agency",
+  "published": false,
+  "sections": [
+    {
+      "heading": "Your first section",
+      "paragraphs": ["Write your first paragraph here."]
+    }
+  ]
+}

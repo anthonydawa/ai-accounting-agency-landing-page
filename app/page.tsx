@@ -1,271 +1,214 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-
-const bookingUrl = "https://calendar.app.google/gN5dqSemjJaRcWRg7";
-const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
-const faqs = [
-  {
-    q: "Do we have to replace the tools we already use?",
-    a: "Usually, no. The first step is understanding your current systems and building practical workflows around the tools that already support your business.",
-  },
-  {
-    q: "Is this only for large companies?",
-    a: "No. The work is designed for growing small and mid-sized businesses that need more reliable financial operations without adding unnecessary complexity.",
-  },
-  {
-    q: "Does automation replace accounting judgment?",
-    a: "No. Automation handles repeatable work and organizes information; qualified financial oversight remains central to reviewing results and making decisions.",
-  },
-  {
-    q: "What happens during the first call?",
-    a: "We discuss where work is manual, delayed, or disconnected, identify the most valuable area to review first, and decide whether a deeper workflow assessment makes sense.",
-  },
-];
+import Link from "next/link";
+import Image from "next/image";
+import { ProductPreview } from "@/components/product-preview";
+import { CommissionCase } from "@/components/commission-case";
+import { ContactSection } from "@/components/contact-section";
+import { ArticleCard } from "@/components/article-card";
+import { articles } from "@/lib/articles";
+import { assetBasePath, bookingUrl, faqs, services } from "@/lib/site";
+export const metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
-
   return (
-    <main>
+    <main id="main-content">
       <div className="announcement">
-        <span className="pulse" aria-hidden="true" />
-        Now booking complimentary 30-minute workflow consultations
+        <span className="pulse" aria-hidden="true" /> Financial expertise meets
+        intelligent automation
       </div>
-
       <section className="hero" id="top">
         <div className="hero-grid shell">
           <div className="hero-copy">
+            <p className="eyebrow product-eyebrow">
+              <span /> Introducing Sales Commission
+            </p>
             <h1>
-              Less manual work.<br />
-              <span>Clearer numbers.</span><br />
-              More room to grow.
+              Less commission
+              <br />
+              <span>confusion.</span>
+              <br />
+              More clarity.
             </h1>
             <p className="hero-lede">
-              We help growing companies reduce the cost of repetitive financial work,
-              get clearer information sooner, and build a back office that can scale
-              without adding the same amount of administrative overhead.
+              Bring contracts, earnings, and payout schedules into one connected
+              workflow. Give your sales and finance teams a clearer view of
+              what’s owed, when, and why.
             </p>
             <div className="hero-actions">
-              <a className="button" href={bookingUrl} target="_blank" rel="noreferrer">View live availability <span>↗</span></a>
-              <a className="text-link" href="#results">See a client use case <span>↓</span></a>
+              <a
+                className="button"
+                href={bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a product walkthrough ↗
+              </a>
+              <a className="text-link dark" href="#workflow">
+                See how it works ↓
+              </a>
             </div>
-            <div className="trust-line" aria-label="Company qualifications">
-              <span>Licensed CPA</span><i />
-              <span>MBA</span><i />
-              <span>20+ years of experience</span>
+            <div className="trust-line">
+              <span>CPA-led</span>
+              <i />
+              <span>Built around your rules</span>
+              <i />
+              <span>Human oversight</span>
             </div>
           </div>
-
-          <div className="hero-media">
-            <div className="portrait-collage">
-              <img
-                className="portrait-main"
-                src={`${assetBasePath}/angela-hernandez.png`}
-                alt="Angela Hernandez, founder of AI Accounting Agency"
-              />
-              <div className="portrait-caption-floating">
-                <strong>Angela Hernandez, CPA, MBA</strong>
-                <small>Founder &amp; CEO</small>
-              </div>
-              <div className="portrait-proof"><strong>20+</strong><span>years in finance<br />&amp; operations</span></div>
-            </div>
+          <div className="product-media">
+            <ProductPreview />
           </div>
         </div>
+        <div className="hero-bottom shell">
+          <span>Our first product. One practical place to start.</span>
+          <Link href="/sales-commission/">Explore Sales Commission →</Link>
+        </div>
       </section>
-
-      <section className="transformation section" aria-labelledby="transformation-title">
-        <div className="workflow-glow workflow-glow-one" aria-hidden="true" />
-        <div className="workflow-glow workflow-glow-two" aria-hidden="true" />
+      <section
+        className="transformation section"
+        aria-labelledby="transformation-title"
+      >
         <div className="shell transformation-inner">
           <div className="transformation-heading">
-            <p className="eyebrow light">The operational payoff</p>
-            <h2 id="transformation-title">What changes when your back office<br /><span>works as fast as your business.</span></h2>
-            <p>Less of your team’s week spent moving information. More time to understand it, act on it, and grow with control.</p>
+            <p className="eyebrow">The operational payoff</p>
+            <h2 id="transformation-title">
+              A better commission cycle.
+              <br />
+              <span>For everyone involved.</span>
+            </h2>
+            <p>
+              Less time piecing together spreadsheets. More confidence in the
+              numbers behind every conversation.
+            </p>
           </div>
-          <div className="outcome-path" aria-hidden="true"><span /><span /><span /></div>
           <div className="impact-grid">
-            <article className="impact-card">
-              <div className="impact-icon"><span>01</span><i className="capacity-icon" /></div>
-              <p className="impact-kicker">Reclaim operating capacity</p>
-              <h3>Give valuable hours back to the team.</h3>
-              <p>Reduce recurring entry, reconciliation, document handling, and spreadsheet handoffs so skilled people can focus on work that needs judgment.</p>
-            </article>
-            <article className="impact-card featured">
-              <div className="impact-icon"><span>02</span><i className="visibility-icon" /></div>
-              <p className="impact-kicker">Reduce decision lag</p>
-              <h3>See the numbers while they can still help.</h3>
-              <p>Shorten the distance between business activity and useful reporting, giving leaders earlier visibility into cash, performance, and exceptions.</p>
-            </article>
-            <article className="impact-card">
-              <div className="impact-icon"><span>03</span><i className="scale-icon" /></div>
-              <p className="impact-kicker">Scale with less overhead</p>
-              <h3>Grow volume without matching it with admin.</h3>
-              <p>Build repeatable workflows that handle more activity without requiring administrative cost to rise at the same pace.</p>
-            </article>
-          </div>
-          <div className="transformation-cta">
-            <p><strong>Your biggest opportunity may already be hiding in a task your team repeats every week.</strong><span>We’ll help you identify where time, cost, and visibility are being lost.</span></p>
-            <a className="button coral" href={bookingUrl} target="_blank" rel="noreferrer">Find my biggest savings opportunity <span>↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section className="services section" id="results">
-        <div className="shell">
-          <div className="client-case">
-            <div className="case-heading">
-              <div>
-                <p className="case-badge"><span /> Real client use case</p>
-                <h3>We turned commission confusion<br />into one controlled workflow.</h3>
-              </div>
-              <p>The client’s team was dealing with commissions paid too early, others that were missed, and calculations that did not consistently match the contract. We built one automated path from signature to review-ready payout data.</p>
-            </div>
-
-            <div className="case-stage">
-              <aside className="case-before">
-                <p className="stage-label">Before automation</p>
-                <h4>Every payout cycle became an investigation.</h4>
-                <div className="paper-chaos" aria-hidden="true">
-                  <div className="paper contract-paper"><span>CONTRACT</span><i /><i /><i /></div>
-                  <div className="paper sheet-paper"><span>SPREADSHEET</span><i /><i /><i /></div>
-                  <div className="paper warning-paper"><strong>?</strong><span>Which terms apply?</span></div>
+            {[
+              {
+                number: "01",
+                kicker: "For the sales team",
+                title: "Know what you’ve earned.",
+                text: "See contract activity, upfront and recurring earnings, and upcoming payouts in a shared commission workspace.",
+              },
+              {
+                number: "02",
+                kicker: "For finance",
+                title: "Make review less of a hunt.",
+                text: "Bring commission rules, payout timing, and calculation context together so your team can review the details.",
+              },
+              {
+                number: "03",
+                kicker: "For leadership",
+                title: "See what’s ahead.",
+                text: "Explore forecasts, track scheduled commissions, and understand how different assumptions affect the picture.",
+              },
+            ].map((item) => (
+              <article className="impact-card" key={item.number}>
+                <div className="impact-icon">
+                  <span>{item.number}</span>
+                  <span className="impact-arrow" aria-hidden="true">
+                    ↗
+                  </span>
                 </div>
-                <ul>
-                  <li>Some commissions released before they were eligible</li>
-                  <li>Some earned commissions were overlooked</li>
-                  <li>Manual calculations created inconsistent results</li>
-                </ul>
-              </aside>
-
-              <div className="case-engine" aria-label="AI Accounting Agency commission automation system">
-                <div className="engine-input"><span className="mini-document" aria-hidden="true"><i /><i /><i /></span><p><small>Trigger</small><strong>Signed contract</strong></p></div>
-                <div className="engine-stream" aria-hidden="true"><i /><i /><i /></div>
-                <div className="engine-core">
-                  <span className="engine-ring ring-one" aria-hidden="true" />
-                  <span className="engine-ring ring-two" aria-hidden="true" />
-                  <div className="engine-center"><small>Built-in</small><strong>AI</strong><span>Commission engine</span></div>
-                  <div className="data-orbit data-one">Deal value</div>
-                  <div className="data-orbit data-two">Salesperson</div>
-                  <div className="data-orbit data-three">Rate + terms</div>
-                  <div className="data-orbit data-four">Payout date</div>
-                </div>
-                <div className="rule-gate"><span>Approved rules</span><i /><strong>Compute · Validate · Route</strong></div>
-              </div>
-
-              <aside className="case-after">
-                <p className="stage-label">Controlled output</p>
-                <h4>One record shows what is owed, when, and why.</h4>
-                <div className="payout-board" aria-label="Example commission output">
-                  <div className="board-top"><span>Commission register</span><i /><i /><i /></div>
-                  <div className="board-row"><span>Contract data</span><strong>Captured</strong></div>
-                  <div className="board-row"><span>Commission</span><strong>Calculated</strong></div>
-                  <div className="board-row"><span>Payout timing</span><strong>Verified</strong></div>
-                  <div className="board-row flagged"><span>Exceptions</span><strong>Human review</strong></div>
-                </div>
-                <div className="case-results"><span>✓ No premature payout</span><span>✓ No silent omission</span><span>✓ Calculation support retained</span></div>
-              </aside>
-            </div>
-
-            <div className="control-ribbon">
-              <strong>Automation handles the repeatable work.</strong>
-              <span>Any missing or conflicting term stops at a review gate before it can affect the payout record.</span>
-              <div className="shield-mark" aria-hidden="true"><i>✓</i></div>
-            </div>
-
-            <div className="pattern-map">
-              <div className="pattern-copy">
-                <p className="eyebrow">One reusable finance pattern</p>
-                <h4>The document changes.<br />The control system stays.</h4>
-                <p>The same structure can turn other document-heavy finance work into an organized, reviewable process.</p>
-              </div>
-              <div className="pattern-illustration" aria-label="Reusable automation pattern">
-                <div className="pattern-line" aria-hidden="true" />
-                <div className="pattern-node source-node"><i /><strong>Source</strong><span>Document or event</span></div>
-                <div className="pattern-node extract-node"><i>AI</i><strong>Extract</strong><span>Required information</span></div>
-                <div className="pattern-node rules-node"><i>✓</i><strong>Rules</strong><span>Validate and calculate</span></div>
-                <div className="pattern-node record-node"><i /><strong>Record</strong><span>Update the tracker</span></div>
-                <div className="pattern-node review-node"><i>!</i><strong>Review</strong><span>Only exceptions</span></div>
-              </div>
-              <div className="pattern-examples"><span>Vendor invoices</span><span>Payroll adjustments</span><span>Client onboarding</span><span>Recurring reporting</span><span>Document approvals</span></div>
-            </div>
+                <p className="impact-kicker">{item.kicker}</p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-
-      <section className="booking section" id="book">
-        <div className="shell">
-          <div className="booking-heading">
-            <p className="eyebrow">Your next step</p>
-            <h2>Where is manual work<br />slowing your business down?</h2>
-            <p>Choose a time to talk directly, or send a short note and we’ll follow up.</p>
+      <CommissionCase />
+      <section className="secondary-services section shell" id="services">
+        <div className="section-heading heading-with-link">
+          <div>
+            <p className="eyebrow">Beyond commissions</p>
+            <h2>
+              The same care.
+              <br />
+              <span>Across your financial operations.</span>
+            </h2>
           </div>
-
-          <div className="conversion-grid">
-            <div className="calendar-card">
-              <div className="card-kicker"><span className="pulse" /> OPTION 1 · FASTEST</div>
-              <h3>Book a free 30-minute consultation</h3>
-              <p>Choose an available time directly from the connected Google Calendar.</p>
-              <div className="calendar-placeholder">
-                <div className="calendar-icon"><span>30</span><small>MIN</small></div>
-                <div>
-                  <strong>Live calendar availability</strong>
-                  <p>Unavailable times are removed automatically, so every displayed appointment can be booked.</p>
-                </div>
-              </div>
-              <div className="calendar-benefits">
-                <span>✓ Select your date and time</span>
-                <span>✓ Receive an automatic confirmation</span>
-                <span>✓ Google Meet details included after booking</span>
-              </div>
-              <a className="button full" href={bookingUrl} target="_blank" rel="noreferrer">Choose a time in Google Calendar <span>↗</span></a>
-              <div className="booking-note">Live availability · Automatic confirmation · Google Meet</div>
+          <p>
+            Sales Commission is where we start. Our broader services help
+            connect the rest of your back office.
+          </p>
+        </div>
+        <div className="service-grid">
+          {services.map((service) => (
+            <Link
+              key={service.slug}
+              className="service-card"
+              href={`/${service.slug}/`}
+            >
+              <span className="service-number">{service.number}</span>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <span className="service-link">Explore this service ↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="home-about section">
+        <div className="shell home-about-grid">
+          <div className="home-founder-photo">
+            <Image
+              src={`${assetBasePath}/angela-hernandez.png`}
+              width={700}
+              height={800}
+              alt="Angela Hernandez, founder of AI Accounting Agency"
+            />
+            <div>
+              <strong>Angela Hernandez, CPA, MBA</strong>
+              <span>Founder · AI Accounting Agency</span>
             </div>
-
-            <div className="form-card">
-              <div className="card-kicker">OPTION 2 · SEND A NOTE</div>
-              <h3>Tell us what you want to improve</h3>
-              {submitted ? (
-                <div className="form-success" role="status">
-                  <div>✓</div>
-                  <h4>Your form design is ready.</h4>
-                  <p>Connect this form to your preferred form service before launch so submissions are delivered to the team.</p>
-                  <button type="button" className="text-link dark" onClick={() => setSubmitted(false)}>Send another response</button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="field-row">
-                    <label>First name<input name="firstName" required placeholder="First name" /></label>
-                    <label>Last name<input name="lastName" required placeholder="Last name" /></label>
-                  </div>
-                  <label>Work email<input name="email" type="email" required placeholder="you@company.com" /></label>
-                  <label>Company<input name="company" required placeholder="Company name" /></label>
-                  <label>Where is the biggest bottleneck?
-                    <select name="need" defaultValue="">
-                      <option value="" disabled>Select one</option>
-                      <option>Accounting workflows</option>
-                      <option>Financial reporting</option>
-                      <option>Payroll or commissions</option>
-                      <option>Document processing</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </label>
-                  <label>Anything else we should know?<textarea name="message" rows={3} placeholder="A short note is perfect." /></label>
-                  <button className="button full" type="submit">Request my consultation <span>↗</span></button>
-                  <small>By submitting, you agree to be contacted about your request.</small>
-                </form>
-              )}
+          </div>
+          <div className="about-copy">
+            <p className="eyebrow">The expertise behind the systems</p>
+            <h2>
+              Built by people
+              <br />
+              <span>who understand the numbers.</span>
+            </h2>
+            <p>
+              Led by Angela Hernandez, a licensed CPA with an MBA and more than
+              20 years of experience in financial strategy and operational
+              leadership.
+            </p>
+            <p>
+              We combine financial expertise with intelligent workflows to help
+              growing businesses work with greater accuracy, visibility, and
+              control.
+            </p>
+            <div className="credential-row">
+              <span>Licensed CPA</span>
+              <span>MBA</span>
+              <span>20+ years of experience</span>
             </div>
+            <Link className="text-link dark" href="/about-us/">
+              Meet the agency →
+            </Link>
           </div>
         </div>
       </section>
-
+      <section className="journal section shell" id="articles">
+        <div className="section-heading heading-with-link">
+          <div>
+            <p className="eyebrow">Articles & accounting insights</p>
+            <h2>
+              Ideas for a<br />
+              <span>better-run business.</span>
+            </h2>
+          </div>
+          <Link className="text-link dark" href="/blog/">
+            Explore all articles →
+          </Link>
+        </div>
+        <div className="article-grid">
+          {articles.slice(0, 3).map((article) => (
+            <ArticleCard key={article.slug} article={article} />
+          ))}
+        </div>
+      </section>
+      <ContactSection />
       <section className="faq section shell">
         <div className="faq-heading">
           <p className="eyebrow">Questions, answered</p>
@@ -274,30 +217,15 @@ export default function Home() {
         <div className="faq-list">
           {faqs.map((faq) => (
             <details key={faq.q}>
-              <summary>{faq.q}<span>+</span></summary>
+              <summary>
+                {faq.q}
+                <span>+</span>
+              </summary>
               <p>{faq.a}</p>
             </details>
           ))}
         </div>
       </section>
-
-      <footer>
-        <div className="footer-cta shell">
-          <div>
-            <span className="brand footer-brand"><img className="brand-logo" src={`${assetBasePath}/brand-logo.png`} alt="" /><span>Accounting Agency</span></span>
-            <h2>Make the back office<br />work for the business.</h2>
-          </div>
-          <a className="button coral" href={bookingUrl} target="_blank" rel="noreferrer">View live availability <span>↗</span></a>
-        </div>
-        <div className="footer-bottom shell">
-          <div>© 2026 AI Accounting Agency. All rights reserved.</div>
-          <div className="socials">
-            <a href="https://www.instagram.com/ai_accountingagency/" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="https://www.linkedin.com/company/aiaccountingagency/home/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://www.aiaccountingagency.com/" target="_blank" rel="noreferrer">Main website ↗</a>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
