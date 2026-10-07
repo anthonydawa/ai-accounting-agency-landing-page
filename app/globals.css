@@ -176,7 +176,7 @@ h2 em {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: #fffffff7;
+  background: white;
   border-bottom: 1px solid var(--line);
 }
 .header-inner {
