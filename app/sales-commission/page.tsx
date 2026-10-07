@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProductPreview } from "@/components/product-preview";
+import { ProductBenefits } from "@/components/product-benefits";
 import { CommissionCase } from "@/components/commission-case";
 import { ContactSection } from "@/components/contact-section";
 import { bookingUrl } from "@/lib/site";
@@ -11,15 +12,17 @@ export const metadata: Metadata = {
 };
 export default function ProductPage() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="commission-product">
       <section className="hero">
         <div className="hero-grid shell">
           <div className="hero-copy">
-            <p className="eyebrow">Our first product · Sales Commission</p>
+            <p className="eyebrow">Sales Commission by AI Accounting Agency</p>
             <h1>
-              Every commission
+              Your contracts.
               <br />
-              has a <em>backstory.</em>
+              Your earnings.
+              <br />
+              <em>Your payout schedule.</em>
             </h1>
             <p className="hero-lede">
               A connected commission workspace for the people who sell, review,
@@ -45,7 +48,9 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-      <section className="section shell">
+      <ProductBenefits />
+      <CommissionCase />
+      <section className="section shell product-capabilities">
         <div className="section-heading">
           <p className="eyebrow">One connected workspace</p>
           <h2>
@@ -88,7 +93,6 @@ export default function ProductPage() {
           ))}
         </div>
       </section>
-      <CommissionCase />
       <ContactSection />
     </main>
   );

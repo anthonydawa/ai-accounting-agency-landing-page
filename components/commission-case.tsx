@@ -1,79 +1,77 @@
+import { bookingUrl } from "@/lib/site";
 export function CommissionCase() {
   return (
-    <section className="workflow section" id="workflow">
-      <div className="shell workflow-layout">
-        <div className="workflow-intro">
-          <p className="eyebrow">Inside the workflow</p>
-          <h2>The record behind the payout.</h2>
+    <section
+      className="commission-path"
+      id="workflow"
+      aria-labelledby="workflow-title"
+    >
+      <div className="shell">
+        <div className="path-heading">
+          <div>
+            <p className="eyebrow">How the information connects</p>
+            <h2 id="workflow-title">
+              Follow a deal
+              <br />
+              through to its <em>payout.</em>
+            </h2>
+          </div>
           <p>
-            A payout amount is only useful when your team can trace it back to
-            the agreement. Sales Commission connects that information in one
-            workspace.
-          </p>
-          <p className="margin-note">
-            The details matter:
-            <br />a signed deal and a payable commission are different events.
+            The amount, its basis, and its timing belong together. Here’s the
+            path your team should be able to follow.
           </p>
         </div>
-        <div className="workflow-record">
-          <div className="record-heading">
-            <span>Commission review file</span>
-            <span>From source to schedule</span>
-          </div>
-          <dl>
-            <div>
-              <dt>Source</dt>
-              <dd>
-                <strong>The contract</strong>
-                <p>
-                  Recorded services, deal value, salesperson, and relevant
-                  dates.
-                </p>
-              </dd>
-            </div>
-            <div>
-              <dt>Basis</dt>
-              <dd>
-                <strong>The agreed rules</strong>
-                <p>
-                  Rates and terms that explain upfront and recurring earnings.
-                </p>
-              </dd>
-            </div>
-            <div>
-              <dt>Calculation</dt>
-              <dd>
-                <strong>The commission breakdown</strong>
-                <p>
-                  Keep the components visible so finance can review the amount.
-                </p>
-              </dd>
-            </div>
-            <div>
-              <dt>Timing</dt>
-              <dd>
-                <strong>The payout schedule</strong>
-                <p>
-                  See scheduled commissions by pay date, separate from base
-                  salary.
-                </p>
-              </dd>
-            </div>
-            <div>
-              <dt>Review</dt>
-              <dd>
-                <strong>A conversation with context</strong>
-                <p>
-                  Use the record and commission summary to discuss questions
-                  before payment.
-                </p>
-              </dd>
-            </div>
-          </dl>
-          <p className="record-footnote">
-            Your commission rules, data sources, and review process shape the
-            setup.
+        <div className="deal-path">
+          <article>
+            <span className="path-label">Source</span>
+            <h3>The contract</h3>
+            <p>
+              Start with recorded services, deal value, the salesperson, and
+              relevant dates.
+            </p>
+          </article>
+          <article>
+            <span className="path-label">Basis</span>
+            <h3>The rules</h3>
+            <p>
+              Connect the agreed rates and terms to upfront and recurring
+              commission earnings.
+            </p>
+          </article>
+          <article>
+            <span className="path-label">Amount</span>
+            <h3>The earnings</h3>
+            <p>
+              Keep the calculation components visible so the amount can be
+              explained and reviewed.
+            </p>
+          </article>
+          <article>
+            <span className="path-label">Timing</span>
+            <h3>The pay date</h3>
+            <p>
+              See scheduled commissions by payout date and download a summary
+              for review.
+            </p>
+          </article>
+        </div>
+        <div className="review-boundary">
+          <strong>Financial review stays in the picture.</strong>
+          <p>
+            A signed contract and a payable commission are different events.
+            Your agreement and review process determine when payment is due.
           </p>
+        </div>
+        <div className="path-next">
+          <p>Let’s walk through how this fits your commission process.</p>
+          <a
+            className="button"
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Book a product walkthrough <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>

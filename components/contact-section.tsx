@@ -16,16 +16,15 @@ export function ContactSection() {
       <div className="shell">
         <div className="conversion-grid">
           <div className="contact-invitation">
-            <p className="eyebrow">Let’s talk about your process</p>
+            <p className="eyebrow">See Sales Commission in context</p>
             <h2>
-              Bring the questions.
+              A walkthrough,
               <br />
-              <em>And the spreadsheet.</em>
+              <em>with your process in mind.</em>
             </h2>
             <p>
-              Walk us through your commission process, or the financial workflow
-              that needs attention. We’ll discuss the rules, reporting needs,
-              and a practical next step.
+              Show us how commissions work today. We’ll discuss your rules, the
+              information your team needs, and how Sales Commission could fit.
             </p>
             <a
               className="button"
@@ -33,7 +32,7 @@ export function ContactSection() {
               target="_blank"
               rel="noreferrer"
             >
-              Choose a time to talk
+              Book a product walkthrough
             </a>
             <p className="booking-note">Booking opens in Google Calendar.</p>
             <div className="contact-direct">

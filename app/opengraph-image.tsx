@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 export const dynamic = "force-static";
 export const alt =
-  "Sales Commission by AI Accounting Agency. The deal is signed. The commission should be clear.";
+  "Sales Commission by AI Accounting Agency. Know what’s earned. See when it’s due.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function OpenGraphImage() {
@@ -42,9 +42,9 @@ export default function OpenGraphImage() {
             letterSpacing: "-3px",
           }}
         >
-          <span>The deal is signed.</span>
-          <span>The commission</span>
-          <span style={{ color: "#087b7c" }}>should be clear.</span>
+          <span>Know what’s earned.</span>
+          <span>See when it’s</span>
+          <span style={{ color: "#087b7c" }}>due.</span>
         </div>
         <div
           style={{

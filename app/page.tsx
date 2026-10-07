@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ProductPreview } from "@/components/product-preview";
+import { ProductBenefits } from "@/components/product-benefits";
 import { CommissionCase } from "@/components/commission-case";
 import { ContactSection } from "@/components/contact-section";
 import { ArticleCard } from "@/components/article-card";
@@ -10,24 +11,22 @@ export const metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="agency-home">
       <section className="hero" id="top">
         <div className="hero-grid shell">
           <div className="hero-copy">
             <p className="eyebrow product-eyebrow">
-              Our first product / Sales Commission
+              Sales Commission by AI Accounting Agency
             </p>
             <h1>
-              The deal is signed.
+              Know what’s earned.
               <br />
-              The commission
-              <br />
-              should be <em>clear.</em>
+              See when it’s <em>due.</em>
             </h1>
             <p className="hero-lede">
-              Bring contracts, earnings, and payout schedules into one connected
-              workflow. Give sales and finance a shared record of what’s owed,
-              when, and why.
+              Sales Commission connects your contracts, commission earnings, and
+              payout schedules. Give sales and finance the details behind every
+              payout, in one workspace.
             </p>
             <div className="hero-actions">
               <a
@@ -38,101 +37,33 @@ export default function Home() {
               >
                 Book a product walkthrough
               </a>
-              <a className="text-link" href="#workflow">
-                See the working details
+              <a className="text-link" href="#product-fit">
+                Find your team’s view
               </a>
             </div>
             <p className="hero-note">
-              Developed with accounting expertise.
-              <br />
-              Built around your commission rules.
+              CPA-led expertise. A setup shaped by your commission rules.
             </p>
           </div>
           <div className="product-media">
             <ProductPreview />
           </div>
         </div>
-        <div className="hero-bottom shell">
-          <span>
-            AI Accounting Agency · Financial expertise applied to everyday work.
-          </span>
-          <Link href="/sales-commission/">Explore the product ↗</Link>
-        </div>
       </section>
-      <section
-        className="transformation section shell"
-        aria-labelledby="transformation-title"
-      >
-        <div className="transformation-heading">
-          <p className="eyebrow">A shared point of reference</p>
-          <h2 id="transformation-title">
-            A shared record for every payout conversation.
-          </h2>
-          <p>
-            Commission questions cross departments. The information should
-            travel with them.
-          </p>
+      <nav className="product-toc" aria-label="Explore Sales Commission">
+        <div className="shell">
+          <strong>Sales Commission</strong>
+          <a href="#product-fit">Your team’s view</a>
+          <a href="#workflow">How it works</a>
+          <a href="#agency">The expertise</a>
+          <a href="#contact">
+            Book a walkthrough <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <div className="audience-ledger">
-          <article>
-            <h3>Sales</h3>
-            <div>
-              <strong>What have I earned?</strong>
-              <p>
-                See contract activity, upfront and recurring earnings, and
-                upcoming payouts in a shared workspace.
-              </p>
-            </div>
-          </article>
-          <article>
-            <h3>Finance</h3>
-            <div>
-              <strong>What supports this amount?</strong>
-              <p>
-                Review the commission rules, calculation context, and payout
-                timing together.
-              </p>
-            </div>
-          </article>
-          <article>
-            <h3>Leadership</h3>
-            <div>
-              <strong>What should we plan for?</strong>
-              <p>
-                Track scheduled commissions and explore how different
-                assumptions affect forecasts.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
+      </nav>
+      <ProductBenefits />
       <CommissionCase />
-      <section className="secondary-services section shell" id="services">
-        <div className="section-heading heading-with-link">
-          <div>
-            <p className="eyebrow">The broader practice</p>
-            <h2>Accounting for the rest of the business.</h2>
-          </div>
-          <p>
-            Start with commissions. When another financial process needs
-            attention, our accounting and workflow services can help.
-          </p>
-        </div>
-        <div className="service-directory">
-          {services.map((service) => (
-            <Link
-              key={service.slug}
-              className="service-entry"
-              href={`/${service.slug}/`}
-            >
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <span aria-hidden="true">↗</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="home-about section">
+      <section className="home-about section" id="agency">
         <div className="shell home-about-grid">
           <figure className="home-founder-photo">
             <Image
@@ -147,26 +78,50 @@ export default function Home() {
             </figcaption>
           </figure>
           <div className="about-copy">
-            <p className="eyebrow">The person behind the practice</p>
-            <h2>
-              Before the automation,
-              <br />
-              <em>there’s judgment.</em>
-            </h2>
-            <p>
-              Angela Hernandez is a licensed CPA with an MBA and more than 20
-              years of experience in financial strategy and operational
-              leadership.
+            <p className="eyebrow">Accounting expertise behind the product</p>
+            <h2>Technology, with an accountant’s judgment behind it.</h2>
+            <p className="founder-introduction">
+              Led by Angela Hernandez, CPA, MBA.
             </p>
             <p>
-              She founded AI Accounting Agency to bring that experience to the
-              everyday processes of growing businesses. The work starts with
-              understanding your numbers, your people, and how information moves
-              between them.
+              More than 20 years in financial strategy and operational
+              leadership inform how we approach your commission process.
+            </p>
+            <p>
+              We start with the agreement, the people doing the work, and the
+              review steps your business needs. Then we shape the workflow
+              around them.
             </p>
             <Link className="text-link" href="/about-us/">
               Meet Angela and the agency
             </Link>
+          </div>
+        </div>
+      </section>
+      <section className="secondary-services section" id="services">
+        <div className="shell practice-layout">
+          <div className="practice-heading">
+            <div>
+              <p className="eyebrow">Also from the agency</p>
+              <h2>More support for your finance team.</h2>
+            </div>
+            <p>
+              Beyond Sales Commission, we help with the accounting and
+              operational work around it.
+            </p>
+          </div>
+          <div className="service-directory">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                className="service-entry"
+                href={`/${service.slug}/`}
+              >
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -186,11 +141,10 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <ContactSection />
-      <section className="faq section shell">
+      <section className="faq section shell" id="questions">
         <div className="faq-heading">
-          <p className="eyebrow">A few practical questions</p>
-          <h2>Before we talk.</h2>
+          <p className="eyebrow">Sales Commission / common questions</p>
+          <h2>What you may want to know.</h2>
         </div>
         <div className="faq-list">
           {faqs.map((faq) => (
@@ -204,6 +158,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <ContactSection />
     </main>
   );
 }

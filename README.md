@@ -1,6 +1,6 @@
 # AI Accounting Agency Website
 
-A Sales Commission-led redesign of the original landing page, using the existing navy, teal, coral, logo, founder portrait, editorial typography, and accounting working papers on predominantly white backgrounds.
+A Sales Commission-led redesign using the existing navy, teal, coral, logo, and founder portrait. Editorial typography and accounting working papers stay at the center, with distinct product, workflow, founder, services, journal, and consultation sections on predominantly light backgrounds.
 
 ## Preview and validation
 
@@ -24,7 +24,8 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 
 ## Site structure
 
-- Home: product hero, benefits, commission review file, secondary services, founder introduction, articles, contact, FAQs.
+- Home: explicit Sales Commission introduction, product section navigation, interactive Sales/Finance/Leadership views, contract-to-payout workflow, founder expertise, secondary services, journal, FAQs, and walkthrough/contact section.
+- Product views support pointer and keyboard selection. The example is educational preview content, rather than live product data.
 - `/sales-commission/`: dedicated product page.
 - `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: existing service categories and paths.
 - `/about-us/`: company and founder page.
