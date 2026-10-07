@@ -24,14 +24,20 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 
 ## Site structure
 
-- Home: explicit Sales Commission introduction, product section navigation, interactive Sales/Finance/Leadership views, contract-to-payout workflow, founder expertise, secondary services, journal, FAQs, and walkthrough/contact section.
-- Product views support pointer and keyboard selection. The example is educational preview content, rather than live product data.
-- `/sales-commission/`: dedicated product page.
-- `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: existing service categories and paths.
-- `/about-us/`: company and founder page.
+- Home: a concise Sales Commission introduction, links into the product directory, founder expertise, secondary services, and recent articles.
+- `/sales-commission/`: product overview, interactive Sales/Finance/Leadership perspectives, capabilities, and FAQs. Team views support pointer and keyboard selection; examples are illustrative rather than live product data.
+- `/sales-commission/how-it-works/`: contract-to-payout workflow and a worked commission example.
+- `/sales-commission/reporting/`: earnings, payout summaries, and forecast scenarios.
+- `/sales-commission/implementation/`: commission rules, source information, review responsibilities, and setup scope.
+- `/services/`: services directory, with Sales Commission featured first.
+- `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: expanded service pages covering inputs, review focus, outputs, capabilities, and their connection to commissions. Existing service paths are preserved.
+- `/about-us/`: company mission, founder background, and the agency's product focus.
+- `/contact/`: booking, direct contact details, email preparation form, and information to bring to a consultation.
 - `/blog/`: searchable article library with category filters.
 - `/blog/[slug]/`: full local articles generated from the content collection.
 - Sitemap and a generated PNG social preview.
+
+The shared navigation includes product and service directories with active-page indicators, keyboard dismissal, and mobile expansion. Each product page also includes a local navigation bar. The homepage leads visitors into these pages rather than duplicating their full content.
 
 ## Adding articles over time
 
@@ -47,7 +53,7 @@ An existing article can instead use `externalUrl` to link to its current publish
 ## Content sources
 
 - Brand assets, original page structure, booking URL: original GitHub landing-page source.
-- Service categories and capabilities: the current aiaccountingagency.com service pages.
+- Service categories and capabilities: the current aiaccountingagency.com homepage and service content. The expanded copy explains those offerings without adding unverified integration, pricing, or delivery promises.
 - Founder background and qualifications: the current About Us page.
 - Four article summaries, dates, and destinations: the current article archive, verified on October 6, 2026.
 - Product capabilities: the existing Sales Commission dashboard implementation. The contract and calculation example uses clearly labeled illustrative amounts.

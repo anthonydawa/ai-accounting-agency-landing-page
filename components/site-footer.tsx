@@ -19,11 +19,19 @@ export function SiteFooter() {
           <div>
             <strong>Explore</strong>
             <Link href="/sales-commission/">Sales Commission</Link>
+            <Link href="/sales-commission/how-it-works/">How it works</Link>
+            <Link href="/sales-commission/reporting/">
+              Reporting & forecasts
+            </Link>
+            <Link href="/sales-commission/implementation/">
+              Setup & implementation
+            </Link>
             <Link href="/about-us/">About us</Link>
             <Link href="/blog/">The agency journal</Link>
           </div>
           <div>
             <strong>The practice</strong>
+            <Link href="/services/">All services</Link>
             {services.map((s) => (
               <Link key={s.slug} href={`/${s.slug}/`}>
                 {s.title}
@@ -31,7 +39,8 @@ export function SiteFooter() {
             ))}
           </div>
           <div>
-            <strong>Elsewhere</strong>
+            <strong>Get in touch</strong>
+            <Link href="/contact/">Contact the agency</Link>
             <a
               href="https://www.linkedin.com/company/aiaccountingagency/home/"
               target="_blank"

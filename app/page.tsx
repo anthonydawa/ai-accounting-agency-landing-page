@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ProductPreview } from "@/components/product-preview";
-import { ProductBenefits } from "@/components/product-benefits";
-import { CommissionCase } from "@/components/commission-case";
-import { ContactSection } from "@/components/contact-section";
+import { PageInvitation } from "@/components/page-invitation";
+import { productPages } from "@/lib/product-pages";
 import { ArticleCard } from "@/components/article-card";
 import { articles } from "@/lib/articles";
-import { assetBasePath, bookingUrl, faqs, services } from "@/lib/site";
+import { assetBasePath, bookingUrl, services } from "@/lib/site";
 export const metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
@@ -37,9 +36,9 @@ export default function Home() {
               >
                 Book a product walkthrough
               </a>
-              <a className="text-link" href="#product-fit">
-                Find your team’s view
-              </a>
+              <Link className="text-link" href="/sales-commission/">
+                Explore Sales Commission
+              </Link>
             </div>
             <p className="hero-note">
               CPA-led expertise. A setup shaped by your commission rules.
@@ -50,19 +49,31 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <nav className="product-toc" aria-label="Explore Sales Commission">
+      <section className="home-product-directory">
         <div className="shell">
-          <strong>Sales Commission</strong>
-          <a href="#product-fit">Your team’s view</a>
-          <a href="#workflow">How it works</a>
-          <a href="#agency">The expertise</a>
-          <a href="#contact">
-            Book a walkthrough <span aria-hidden="true">↗</span>
-          </a>
+          <div className="directory-introduction">
+            <p className="eyebrow">Get to know Sales Commission</p>
+            <h2>
+              The details behind
+              <br />
+              <em>every payout.</em>
+            </h2>
+            <p>
+              Explore the product at your own pace: what your team can see, how
+              the information connects, and what a setup involves.
+            </p>
+          </div>
+          <div className="product-page-links">
+            {productPages.map((page) => (
+              <Link key={page.href} href={page.href}>
+                <h3>{page.label}</h3>
+                <p>{page.description}</p>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
         </div>
-      </nav>
-      <ProductBenefits />
-      <CommissionCase />
+      </section>
       <section className="home-about section" id="agency">
         <div className="shell home-about-grid">
           <figure className="home-founder-photo">
@@ -105,10 +116,15 @@ export default function Home() {
               <p className="eyebrow">Also from the agency</p>
               <h2>More support for your finance team.</h2>
             </div>
-            <p>
-              Beyond Sales Commission, we help with the accounting and
-              operational work around it.
-            </p>
+            <div className="practice-summary">
+              <p>
+                Beyond Sales Commission, we help with the accounting and
+                operational work around it.
+              </p>
+              <Link className="text-link" href="/services/">
+                Explore all services
+              </Link>
+            </div>
           </div>
           <div className="service-directory">
             {services.map((service) => (
@@ -141,24 +157,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="faq section shell" id="questions">
-        <div className="faq-heading">
-          <p className="eyebrow">Sales Commission / common questions</p>
-          <h2>What you may want to know.</h2>
-        </div>
-        <div className="faq-list">
-          {faqs.map((faq) => (
-            <details key={faq.q}>
-              <summary>
-                {faq.q}
-                <span aria-hidden="true">+</span>
-              </summary>
-              <p>{faq.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-      <ContactSection />
+      <PageInvitation />
     </main>
   );
 }

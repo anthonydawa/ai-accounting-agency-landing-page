@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { ProductPreview } from "@/components/product-preview";
 import { ProductBenefits } from "@/components/product-benefits";
-import { CommissionCase } from "@/components/commission-case";
-import { ContactSection } from "@/components/contact-section";
-import { bookingUrl } from "@/lib/site";
+import Link from "next/link";
+import { ProductNavigation } from "@/components/product-navigation";
+import { PageInvitation } from "@/components/page-invitation";
+import { productPages } from "@/lib/product-pages";
+import { bookingUrl, faqs } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Sales Commission",
   description:
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 export default function ProductPage() {
   return (
     <main id="main-content" className="commission-product">
+      <ProductNavigation current="/sales-commission/" />
       <section className="hero">
         <div className="hero-grid shell">
           <div className="hero-copy">
@@ -38,9 +41,12 @@ export default function ProductPage() {
               >
                 Book a product walkthrough
               </a>
-              <a className="text-link dark" href="#workflow">
+              <Link
+                className="text-link"
+                href="/sales-commission/how-it-works/"
+              >
                 Explore the workflow
-              </a>
+              </Link>
             </div>
           </div>
           <div className="product-media">
@@ -49,7 +55,6 @@ export default function ProductPage() {
         </div>
       </section>
       <ProductBenefits />
-      <CommissionCase />
       <section className="section shell product-capabilities">
         <div className="section-heading">
           <p className="eyebrow">One connected workspace</p>
@@ -93,7 +98,36 @@ export default function ProductPage() {
           ))}
         </div>
       </section>
-      <ContactSection />
+      <section className="shell product-next-pages section">
+        <p className="eyebrow">Go further into the product</p>
+        <div className="product-page-links">
+          {productPages.slice(1).map((page) => (
+            <Link key={page.href} href={page.href}>
+              <h3>{page.label}</h3>
+              <p>{page.description}</p>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="faq section shell">
+        <div className="faq-heading">
+          <p className="eyebrow">Sales Commission / common questions</p>
+          <h2>What you may want to know.</h2>
+        </div>
+        <div className="faq-list">
+          {faqs.map((faq) => (
+            <details key={faq.q}>
+              <summary>
+                {faq.q}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+      <PageInvitation />
     </main>
   );
 }

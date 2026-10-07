@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { PageInvitation } from "@/components/page-invitation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { assetBasePath, bookingUrl } from "@/lib/site";
@@ -57,6 +59,22 @@ export default function AboutPage() {
           </a>
         </div>
       </section>
+      <section className="agency-mission">
+        <div className="shell">
+          <p className="eyebrow">Our mission</p>
+          <h2>
+            Dependable financial operations
+            <br />
+            for growing businesses.
+          </h2>
+          <p>
+            We combine accounting expertise with practical automation across
+            bookkeeping, account management, payroll, and reporting. The aim is
+            to make recurring work more reliable and the information behind it
+            easier to review.
+          </p>
+        </div>
+      </section>
       <section className="principles section shell">
         <div className="section-heading">
           <p className="eyebrow">Our approach</p>
@@ -86,6 +104,18 @@ export default function AboutPage() {
           </article>
         </div>
       </section>
+      <section className="shell section product-related">
+        <p className="eyebrow">Our first product</p>
+        <Link href="/sales-commission/">
+          <h2>Starting with Sales Commission.</h2>
+          <p>
+            Contracts, earnings, and payout timing touch sales, finance, and
+            leadership. We are bringing those details into one connected
+            workspace.
+          </p>
+        </Link>
+      </section>
+      <PageInvitation />
     </main>
   );
 }

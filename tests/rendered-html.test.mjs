@@ -104,6 +104,11 @@ test("required pages, product messaging and working contact path are exported", 
   for (const path of [
     "index.html",
     "sales-commission/index.html",
+    "sales-commission/how-it-works/index.html",
+    "sales-commission/reporting/index.html",
+    "sales-commission/implementation/index.html",
+    "services/index.html",
+    "contact/index.html",
     "sales-accounting/index.html",
     "financial-reporting/index.html",
     "payroll-business/index.html",
@@ -115,7 +120,9 @@ test("required pages, product messaging and working contact path are exported", 
   const html = await readFile(join(root, "index.html"), "utf8");
   assert.ok(html.includes("Sales Commission"));
   assert.ok(html.includes("https://calendar.app.google/gN5dqSemjJaRcWRg7"));
-  assert.ok(html.includes("Prepare my email"));
+  const contactHtml = await readFile(join(root, "contact/index.html"), "utf8");
+  assert.ok(contactHtml.includes("Prepare my email"));
+  assert.ok(contactHtml.includes("mailto:info@aiaccountingagency.com"));
   assert.ok(!html.includes("Your form design is ready"));
   assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1);
 });
