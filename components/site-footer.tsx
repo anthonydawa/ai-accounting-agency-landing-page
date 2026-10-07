@@ -8,8 +8,8 @@ export function SiteFooter() {
           <div>
             <strong className="footer-name">AI Accounting Agency</strong>
             <p>
-              Accounting expertise for the financial workflows your business
-              runs on.
+              Sales Commission and accounting automation, led by financial
+              expertise.
             </p>
             <a href="mailto:info@aiaccountingagency.com">
               info@aiaccountingagency.com
@@ -17,21 +17,17 @@ export function SiteFooter() {
             <a href="tel:+17026251966">702-625-1966</a>
           </div>
           <div>
-            <strong>Explore</strong>
-            <Link href="/sales-commission/">Sales Commission</Link>
+            <strong>Sales Commission</strong>
+            <Link href="/sales-commission/">Product overview</Link>
             <Link href="/sales-commission/how-it-works/">How it works</Link>
-            <Link href="/sales-commission/reporting/">
-              Reporting & forecasts
-            </Link>
+            <Link href="/sales-commission/reporting/">Reports & forecasts</Link>
             <Link href="/sales-commission/implementation/">
               Setup & implementation
             </Link>
-            <Link href="/about-us/">About us</Link>
-            <Link href="/blog/">The agency journal</Link>
           </div>
           <div>
-            <strong>The practice</strong>
-            <Link href="/services/">All services</Link>
+            <strong>Accounting services</strong>
+            <Link href="/services/">Services overview</Link>
             {services.map((s) => (
               <Link key={s.slug} href={`/${s.slug}/`}>
                 {s.title}
@@ -39,8 +35,10 @@ export function SiteFooter() {
             ))}
           </div>
           <div>
-            <strong>Get in touch</strong>
-            <Link href="/contact/">Contact the agency</Link>
+            <strong>The agency</strong>
+            <Link href="/about-us/">About us</Link>
+            <Link href="/blog/">Articles</Link>
+            <Link href="/contact/">Contact</Link>
             <a
               href="https://www.linkedin.com/company/aiaccountingagency/home/"
               target="_blank"

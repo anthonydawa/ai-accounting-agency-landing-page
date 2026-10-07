@@ -1,84 +1,134 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ProductNavigation } from "@/components/product-navigation";
-import { CommissionCase } from "@/components/commission-case";
-import { ProductPreview } from "@/components/product-preview";
-import { PageInvitation } from "@/components/page-invitation";
+import { ProductLayout } from "@/components/product-layout";
+import { NextPage } from "@/components/next-page";
 export const metadata: Metadata = {
   title: "How Sales Commission Works",
   description:
-    "Follow contract information, agreed rates, earnings calculations, and payout schedules through a reviewable commission workflow.",
+    "Follow a source contract through commission rules, earnings calculations, and payout timing.",
   alternates: { canonical: "/sales-commission/how-it-works/" },
 };
 export default function WorkflowPage() {
   return (
-    <main id="main-content" className="product-detail-page">
-      <ProductNavigation current="/sales-commission/how-it-works/" />
-      <section className="page-intro shell">
-        <p className="eyebrow">Sales Commission / how it works</p>
-        <h1>
-          Keep the explanation
-          <br />
-          <em>with the number.</em>
-        </h1>
+    <ProductLayout
+      current="/sales-commission/how-it-works/"
+      title="From contract to payout"
+      description="A commission has a source, a calculation, and a payment schedule. Here is how those pieces connect."
+    >
+      <div className="workflow-example-note">
+        <span className="sample-tag">Illustrative example</span>
         <p>
-          A commission process needs more than a total. Your team needs to
-          understand the contract, the agreed rules, the earnings components,
-          and the timing behind it.
+          One $12,000 contract. An agreed 8% commission rate. Actual rules and
+          payment terms depend on your agreement.
         </p>
-      </section>
-      <CommissionCase />
-      <section className="shell section product-explanation">
-        <div>
-          <p className="eyebrow">A straightforward example</p>
-          <h2>From an agreed rate to a reviewable amount.</h2>
-          <p>
-            A contract value of $12,000 at an agreed rate of 8% gives a $960
-            commission in this simplified example.
-          </p>
-          <p>
-            The calculation alone does not decide when payment is due. Upfront
-            or recurring terms, the relevant dates, and your review process are
-            part of the setup.
-          </p>
-          <p className="example-caveat">
-            Illustrative amounts only. Actual calculations depend on your
-            agreement.
-          </p>
-        </div>
-        <ProductPreview />
-      </section>
-      <section className="product-review-notes">
-        <div className="shell">
-          <div>
-            <p className="eyebrow">Questions to settle before a payout</p>
-            <h2>
-              What finance needs
-              <br />
-              to be able to check.
-            </h2>
+      </div>
+      <section className="workflow-timeline" aria-label="Commission workflow">
+        <article>
+          <div className="timeline-label">
+            <span aria-hidden="true">↳</span> Contract
           </div>
-          <ul>
-            <li>
-              Which recorded contract and service the commission relates to.
-            </li>
-            <li>Which rate and terms apply to that earning component.</li>
-            <li>How upfront and recurring amounts are represented.</li>
-            <li>
-              Which payout date is being reviewed and what still needs
-              clarification.
-            </li>
-          </ul>
-        </div>
+          <div>
+            <h2>Start with the recorded agreement.</h2>
+            <p>
+              The contract tells your team which services were sold, their
+              value, the salesperson, and the relevant dates.
+            </p>
+            <dl className="workflow-data">
+              <div>
+                <dt>Example contract value</dt>
+                <dd>$12,000</dd>
+              </div>
+              <div>
+                <dt>Information to check</dt>
+                <dd>Services, value, salesperson, dates</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+        <article>
+          <div className="timeline-label">
+            <span aria-hidden="true">%</span> Rules
+          </div>
+          <div>
+            <h2>Apply the agreed commission terms.</h2>
+            <p>
+              The rate and earning structure determine the calculation. Upfront
+              and recurring terms must be understood before the total is
+              reviewed.
+            </p>
+            <dl className="workflow-data">
+              <div>
+                <dt>Example agreed rate</dt>
+                <dd>8%</dd>
+              </div>
+              <div>
+                <dt>Information to check</dt>
+                <dd>Rate and earning terms</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+        <article>
+          <div className="timeline-label">
+            <span aria-hidden="true">=</span> Earnings
+          </div>
+          <div>
+            <h2>Keep the calculation visible.</h2>
+            <p>
+              In this simple example, multiplying the contract value by the rate
+              produces a $960 commission. The record should explain how that
+              amount was calculated.
+            </p>
+            <div className="calculation-line">
+              <span>
+                $12,000 <small>contract value</small>
+              </span>
+              <b>×</b>
+              <span>
+                8% <small>agreed rate</small>
+              </span>
+              <b>=</b>
+              <strong>
+                $960 <small>commission</small>
+              </strong>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div className="timeline-label">
+            <span aria-hidden="true">→</span> Payout
+          </div>
+          <div>
+            <h2>Review the payment date separately.</h2>
+            <p>
+              A commission calculation does not set a payment date. Use the
+              agreement and your review process to confirm what is scheduled for
+              each pay cycle.
+            </p>
+            <dl className="workflow-data">
+              <div>
+                <dt>Example payout timing</dt>
+                <dd>Per agreement</dd>
+              </div>
+              <div>
+                <dt>Information to check</dt>
+                <dd>Payment terms and selected pay date</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
       </section>
-      <section className="shell section product-related">
-        <p className="eyebrow">Continue exploring</p>
-        <Link href="/sales-commission/reporting/">
-          <h2>See the reporting views.</h2>
-          <p>Earnings, payout summaries, and forecast scenarios →</p>
-        </Link>
-      </section>
-      <PageInvitation />
-    </main>
+      <aside className="review-callout">
+        <h2>Your team stays in control of the payout.</h2>
+        <p>
+          Review the agreement, rate, earning components, and payment date
+          before deciding a commission is ready for payment.
+        </p>
+      </aside>
+      <NextPage
+        href="/sales-commission/reporting/"
+        title="Reports & forecasts"
+        text="See how earnings, scheduled payouts, and forecast scenarios answer different questions."
+      />
+    </ProductLayout>
   );
 }

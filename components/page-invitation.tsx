@@ -1,17 +1,18 @@
 import Link from "next/link";
 import { bookingUrl } from "@/lib/site";
 export function PageInvitation({
-  title = "Let’s look at your commission process.",
-  text = "Bring the agreement, the questions, and the way your team works today. We’ll discuss how Sales Commission could fit.",
+  title = "See Sales Commission in a demo.",
+  text = "Bring a sample contract and your commission rules. We’ll show you how the product could fit your process.",
+  service = false,
 }: {
   title?: string;
   text?: string;
+  service?: boolean;
 }) {
   return (
     <section className="page-invitation">
-      <div className="shell">
+      <div className="shell invitation-inner">
         <div>
-          <p className="eyebrow">Your next conversation</p>
           <h2>{title}</h2>
           <p>{text}</p>
         </div>
@@ -22,10 +23,11 @@ export function PageInvitation({
             target="_blank"
             rel="noreferrer"
           >
-            Book a walkthrough
+            {service ? "Book a consultation" : "Book a demo"}{" "}
+            <span aria-hidden="true">↗</span>
           </a>
           <Link className="text-link" href="/contact/">
-            Contact the agency
+            Ask us a question
           </Link>
         </div>
       </div>

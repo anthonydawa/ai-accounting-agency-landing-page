@@ -18,6 +18,7 @@ export function ArticleCard({ article }: { article: Article }) {
   return article.externalUrl ? (
     <a
       className="article-card"
+      data-category={article.category}
       href={article.externalUrl}
       target="_blank"
       rel="noreferrer"
@@ -25,7 +26,11 @@ export function ArticleCard({ article }: { article: Article }) {
       {body}
     </a>
   ) : (
-    <Link className="article-card" href={`/blog/${article.slug}/`}>
+    <Link
+      className="article-card"
+      data-category={article.category}
+      href={`/blog/${article.slug}/`}
+    >
       {body}
     </Link>
   );

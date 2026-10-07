@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { RouteFocus } from "@/components/route-focus";
 
 const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -20,14 +21,14 @@ export const metadata: Metadata = {
     shortcut: `${assetBasePath}/brand-logo.png`,
   },
   openGraph: {
-    title: "Sales Commission. Know what’s earned. See when it’s due.",
+    title: "Sales commissions, from contract to payout.",
     description:
       "Sales Commission and CPA-led financial workflows by AI Accounting Agency.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sales Commission. Know what’s earned. See when it’s due.",
+    title: "Sales commissions, from contract to payout.",
     description:
       "Sales Commission and CPA-led financial workflows by AI Accounting Agency.",
   },
@@ -43,6 +44,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <SiteHeader />
+        <RouteFocus />
         {children}
         <SiteFooter />
       </body>

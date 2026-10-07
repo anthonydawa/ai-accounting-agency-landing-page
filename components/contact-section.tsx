@@ -12,109 +12,100 @@ export function ContactSection() {
     );
   }
   return (
-    <section className="booking section" id="contact">
-      <div className="shell">
-        <div className="conversion-grid">
-          <div className="contact-invitation">
-            <p className="eyebrow">See Sales Commission in context</p>
-            <h2>
-              A walkthrough,
-              <br />
-              <em>with your process in mind.</em>
-            </h2>
-            <p>
-              Show us how commissions work today. We’ll discuss your rules, the
-              information your team needs, and how Sales Commission could fit.
-            </p>
-            <a
-              className="button"
-              href={bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Book a product walkthrough
-            </a>
-            <p className="booking-note">Booking opens in Google Calendar.</p>
-            <div className="contact-direct">
-              <span>Prefer to write?</span>
-              <a href="mailto:info@aiaccountingagency.com">
-                info@aiaccountingagency.com
-              </a>
-            </div>
-          </div>
-          <div className="form-card">
-            <p className="eyebrow">An introduction by email</p>
-            <h3>Tell us what you have in mind.</h3>
-            <form onSubmit={prepareDraft} onChange={() => setDraftUrl("")}>
-              <label>
-                Your name
-                <input
-                  name="name"
-                  required
-                  autoComplete="name"
-                  placeholder="Full name"
-                />
-              </label>
-              <label>
-                Work email
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  placeholder="you@company.com"
-                />
-              </label>
-              <label>
-                Company
-                <input
-                  name="company"
-                  required
-                  autoComplete="organization"
-                  placeholder="Company name"
-                />
-              </label>
-              <label>
-                I’m interested in
-                <select name="need" defaultValue="Sales Commission">
-                  <option>Sales Commission</option>
-                  <option>Sales & Accounting Operations</option>
-                  <option>Financial Reporting & Analytics</option>
-                  <option>Payroll & Business Processes</option>
-                  <option>Not sure yet</option>
-                </select>
-              </label>
-              <label>
-                What would you like to improve?
-                <textarea
-                  name="message"
-                  rows={3}
-                  placeholder="Tell us a little about your workflow."
-                />
-              </label>
-              <button className="button full" type="submit">
-                Prepare my email
-              </button>
-              <small>
-                Creates an email draft for you to review and send in your email
-                app.
-              </small>
-              {draftUrl && (
-                <div className="email-ready" role="status">
-                  <strong>Your email draft is ready.</strong>
-                  <a href={draftUrl}>Open draft in my email app</a>
-                  <small>
-                    Nothing has been sent. You can also email{" "}
-                    <a href="mailto:info@aiaccountingagency.com">
-                      info@aiaccountingagency.com
-                    </a>{" "}
-                    directly.
-                  </small>
-                </div>
-              )}
-            </form>
-          </div>
+    <section className="contact-options" aria-label="Ways to contact us">
+      <div className="contact-booking">
+        <span className="option-label">A conversation</span>
+        <h2>Choose a time to meet.</h2>
+        <p>
+          For a Sales Commission demo, bring a sample agreement, your commission
+          rules, and the tools your team uses today.
+        </p>
+        <a
+          className="button"
+          href={bookingUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book a demo or consultation ↗
+        </a>
+        <small>Opens our booking page in Google Calendar.</small>
+        <div className="contact-direct">
+          <h3>Contact us directly</h3>
+          <a href="mailto:info@aiaccountingagency.com">
+            info@aiaccountingagency.com
+          </a>
+          <a href="tel:+17026251966">702-625-1966</a>
         </div>
+      </div>
+      <div className="form-card">
+        <span className="option-label">An email introduction</span>
+        <h2>Tell us what you need.</h2>
+        <p>Prepare an email with a little context for our team.</p>
+        <form onSubmit={prepareDraft} onChange={() => setDraftUrl("")}>
+          <div className="form-row">
+            <label>
+              Your name
+              <input
+                name="name"
+                required
+                autoComplete="name"
+                placeholder="Full name"
+              />
+            </label>
+            <label>
+              Work email
+              <input
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="you@company.com"
+              />
+            </label>
+          </div>
+          <label>
+            Company
+            <input
+              name="company"
+              required
+              autoComplete="organization"
+              placeholder="Company name"
+            />
+          </label>
+          <label>
+            I’m interested in
+            <select name="need" defaultValue="Sales Commission">
+              <option>Sales Commission</option>
+              <option>Sales & Accounting Operations</option>
+              <option>Financial Reporting & Analytics</option>
+              <option>Payroll & Business Processes</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>
+            What would you like to improve?
+            <textarea
+              name="message"
+              rows={4}
+              placeholder="Your current process, questions, or reporting needs."
+            />
+          </label>
+          <button className="button" type="submit">
+            Prepare my email →
+          </button>
+          <small>
+            This creates a draft to review and send in your email app.
+          </small>
+          {draftUrl && (
+            <div className="email-ready" role="status">
+              <strong>Your email draft is ready.</strong>
+              <a href={draftUrl}>Open draft in my email app</a>
+              <small>
+                Nothing has been sent. Review and send it from your email app.
+              </small>
+            </div>
+          )}
+        </form>
       </div>
     </section>
   );

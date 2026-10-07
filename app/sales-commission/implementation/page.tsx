@@ -1,111 +1,95 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ProductNavigation } from "@/components/product-navigation";
-import { PageInvitation } from "@/components/page-invitation";
+import { ProductLayout } from "@/components/product-layout";
+import { bookingUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Sales Commission Setup & Implementation",
   description:
-    "Prepare for a Sales Commission walkthrough with your rules, contract sources, payout timing, and reporting needs.",
+    "Plan Sales Commission implementation around your agreements, source records, review process, and reporting requirements.",
   alternates: { canonical: "/sales-commission/implementation/" },
 };
 export default function SetupPage() {
   return (
-    <main id="main-content" className="product-detail-page">
-      <ProductNavigation current="/sales-commission/implementation/" />
-      <section className="page-intro shell">
-        <p className="eyebrow">Sales Commission / setup & implementation</p>
-        <h1>
-          Your rules shape
-          <br />
-          <em>the setup.</em>
-        </h1>
-        <p>
-          Start with the way commissions work in your business. The scope
-          depends on your agreements, source records, review decisions, and
-          reporting needs.
-        </p>
-      </section>
-      <section className="shell setup-conversation">
+    <ProductLayout
+      current="/sales-commission/implementation/"
+      title="Set up Sales Commission for your business"
+      description="We start with your commission rules and current process, then agree the data, reporting, and implementation work your team needs."
+    >
+      <section className="setup-start">
         <div>
-          <p className="eyebrow">What we discuss together</p>
-          <h2>A useful starting point.</h2>
+          <p className="page-label">Start here</p>
+          <h2>Book a product demo.</h2>
           <p>
-            You do not need a perfectly organized process to begin. Bring what
-            your team uses today and the questions that keep coming up.
+            See the commission workflow and talk through a typical contract from
+            your business. You can bring your current spreadsheets or records.
           </p>
+          <a
+            className="button"
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Choose a demo time ↗
+          </a>
         </div>
-        <div className="setup-topics">
+        <div className="prepare-list">
+          <h3>Useful things to bring</h3>
+          <ul>
+            <li>A sample contract or service agreement</li>
+            <li>Your commission rates and payout terms</li>
+            <li>The tools or spreadsheets you use today</li>
+            <li>A report your team needs each pay cycle</li>
+          </ul>
+        </div>
+      </section>
+      <section className="content-section">
+        <h2>What we clarify before implementation</h2>
+        <div className="setup-decisions">
           <article>
-            <h3>The commission rules</h3>
+            <h3>Your commission rules</h3>
             <p>
               Rates, upfront and recurring terms, salesperson assignments, and
               what determines a payout date.
             </p>
+            <span>Agreed calculation requirements</span>
           </article>
           <article>
-            <h3>The source information</h3>
+            <h3>Your source records</h3>
             <p>
-              Where contracts and service details are recorded, how values and
-              dates are maintained, and which tools hold the information.
+              Where contracts, service details, values, and dates are
+              maintained. Specific integrations are confirmed during discovery.
             </p>
+            <span>Confirmed data sources and connected tools</span>
           </article>
           <article>
-            <h3>The review process</h3>
+            <h3>Your review process</h3>
             <p>
-              Who checks the calculation, how questions are resolved, and what
-              should happen before a commission is scheduled for payment.
+              Who checks a commission, how questions are resolved, and what must
+              happen before payment is scheduled.
             </p>
+            <span>Clear review responsibilities</span>
           </article>
           <article>
-            <h3>The reporting needs</h3>
+            <h3>Your reporting needs</h3>
             <p>
-              What sales, finance, and leadership need to see, share, and
-              discuss during each pay cycle.
+              The earnings, payout summaries, and forecasts that sales, finance,
+              and leadership need to review.
             </p>
+            <span>Defined reports and scope</span>
           </article>
         </div>
       </section>
-      <section className="setup-scope">
-        <div className="shell">
-          <p className="eyebrow">Before agreeing an implementation</p>
-          <h2>Make the scope explicit.</h2>
-          <div>
-            <article>
-              <h3>Confirm the connected tools.</h3>
-              <p>
-                Specific integrations are confirmed during discovery. Start with
-                your existing systems and the information they can provide.
-              </p>
-            </article>
-            <article>
-              <h3>Walk through representative examples.</h3>
-              <p>
-                Discuss a typical contract and any unusual terms so the
-                calculation and reporting requirements are clear.
-              </p>
-            </article>
-            <article>
-              <h3>Agree the work and responsibilities.</h3>
-              <p>
-                Review the required setup, data preparation, and review
-                ownership before deciding on an implementation.
-              </p>
-            </article>
-          </div>
-          <p className="scope-note">
-            Pricing and timing depend on the agreed scope. We discuss the
-            requirements before recommending a setup.
-          </p>
-        </div>
-      </section>
-      <section className="shell section product-related">
-        <p className="eyebrow">A related need?</p>
-        <Link href="/services/">
-          <h2>The rest of the financial workflow.</h2>
-          <p>Explore accounting, reporting, and payroll support →</p>
+      <section className="implementation-scope">
+        <h2>Agree the scope before starting.</h2>
+        <p>
+          Setup, data preparation, responsibilities, pricing, and timing depend
+          on your requirements. We discuss those together before recommending an
+          implementation.
+        </p>
+        <Link className="text-link" href="/contact/">
+          Send us your requirements →
         </Link>
       </section>
-      <PageInvitation />
-    </main>
+    </ProductLayout>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { articles, articleDate } from "@/lib/articles";
 import { bookingUrl, siteUrl } from "@/lib/site";
+import { PageContext } from "@/components/page-context";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return articles.filter((a) => !a.externalUrl).map((a) => ({ slug: a.slug }));
@@ -48,9 +48,10 @@ export default async function ArticlePage({
   return (
     <main id="main-content">
       <article className="article-detail shell">
-        <Link className="back-link" href="/blog/">
-          ← All articles
-        </Link>
+        <PageContext
+          current={article.title}
+          parent={{ label: "Articles", href: "/blog/" }}
+        />
         <p className="eyebrow">{article.category}</p>
         <h1>{article.title}</h1>
         <p className="article-deck">{article.excerpt}</p>
@@ -70,10 +71,10 @@ export default async function ArticlePage({
           ))}
         </div>
         <div className="article-end">
-          <h2>Let’s look at your commission process.</h2>
+          <h2>See Sales Commission in a demo.</h2>
           <p>
-            Bring your current workflow. We’ll talk through what a more
-            connected setup could look like.
+            Bring a sample agreement and your commission rules. We’ll discuss
+            how the product could fit your team.
           </p>
           <a
             className="button"
@@ -81,7 +82,7 @@ export default async function ArticlePage({
             target="_blank"
             rel="noreferrer"
           >
-            Book a consultation ↗
+            Book a product demo ↗
           </a>
         </div>
         <script

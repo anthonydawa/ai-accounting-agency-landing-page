@@ -1,25 +1,22 @@
 export const productPages = [
   {
     href: "/sales-commission/",
-    label: "Overview",
-    description: "The workspace for contracts, earnings, and payout schedules.",
+    label: "Product overview",
+    description: "What you can manage",
   },
   {
     href: "/sales-commission/how-it-works/",
     label: "How it works",
-    description:
-      "Follow the information from a contract to its commission and pay date.",
+    description: "From contract to payout",
   },
   {
     href: "/sales-commission/reporting/",
-    label: "Reporting & forecasts",
-    description:
-      "Understand earnings, review payout summaries, and explore assumptions.",
+    label: "Reports & forecasts",
+    description: "What your team can see",
   },
   {
     href: "/sales-commission/implementation/",
     label: "Setup & implementation",
-    description:
-      "The rules, source information, and review decisions we discuss with you.",
+    description: "How we get you started",
   },
 ];

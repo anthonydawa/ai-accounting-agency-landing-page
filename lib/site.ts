@@ -94,7 +94,7 @@ export const faqs = [
   },
   {
     q: "Does automation replace financial oversight?",
-    a: "Accounting judgment remains essential. Automation organizes repeatable work and flags exceptions so your team can review results and control payout decisions.",
+    a: "Accounting judgment remains essential. Sales Commission organizes contract information, earnings, and payout dates so your team can review amounts and control payout decisions.",
   },
   {
     q: "Do you offer services beyond commissions?",

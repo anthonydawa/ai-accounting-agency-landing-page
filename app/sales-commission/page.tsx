@@ -1,94 +1,65 @@
 import type { Metadata } from "next";
-import { ProductPreview } from "@/components/product-preview";
-import { ProductBenefits } from "@/components/product-benefits";
 import Link from "next/link";
-import { ProductNavigation } from "@/components/product-navigation";
-import { PageInvitation } from "@/components/page-invitation";
-import { productPages } from "@/lib/product-pages";
+import { ProductLayout } from "@/components/product-layout";
+import { CommissionRecord } from "@/components/commission-record";
+import { NextPage } from "@/components/next-page";
 import { bookingUrl, faqs } from "@/lib/site";
 export const metadata: Metadata = {
-  title: "Sales Commission",
+  title: "Sales Commission Product Overview",
   description:
-    "Connect contract activity, commission earnings, payout schedules, and forecasting with Sales Commission by AI Accounting Agency.",
+    "Manage contract activity, upfront and recurring earnings, payout schedules, and commission reports in one workspace.",
   alternates: { canonical: "/sales-commission/" },
 };
+
 export default function ProductPage() {
   return (
-    <main id="main-content" className="commission-product">
-      <ProductNavigation current="/sales-commission/" />
-      <section className="hero">
-        <div className="hero-grid shell">
-          <div className="hero-copy">
-            <p className="eyebrow">Sales Commission by AI Accounting Agency</p>
-            <h1>
-              Your contracts.
-              <br />
-              Your earnings.
-              <br />
-              <em>Your payout schedule.</em>
-            </h1>
-            <p className="hero-lede">
-              A connected commission workspace for the people who sell, review,
-              and plan. Built around the rules that make your business
-              different.
-            </p>
-            <div className="hero-actions">
-              <a
-                className="button"
-                href={bookingUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Book a product walkthrough
-              </a>
-              <Link
-                className="text-link"
-                href="/sales-commission/how-it-works/"
-              >
-                Explore the workflow
-              </Link>
-            </div>
-          </div>
-          <div className="product-media">
-            <ProductPreview />
-          </div>
-        </div>
-      </section>
-      <ProductBenefits />
-      <section className="section shell product-capabilities">
-        <div className="section-heading">
-          <p className="eyebrow">One connected workspace</p>
+    <ProductLayout
+      current="/sales-commission/"
+      title="Sales Commission"
+      description="A workspace for managing contracts, commission earnings, and payout schedules. Built for the people who sell, review, and plan."
+    >
+      <section className="overview-intro">
+        <div>
           <h2>
-            The details your team
+            Know what is earned.
             <br />
-            <em>comes back to.</em>
+            See when it is due.
           </h2>
+          <p>
+            Bring the source contract, commission calculation, and payment
+            timing into the same view. Your team can trace an amount back to the
+            agreement instead of comparing disconnected files.
+          </p>
+          <a
+            className="button"
+            href={bookingUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Book a product demo ↗
+          </a>
         </div>
-        <div className="service-detail-grid">
+        <CommissionRecord compact />
+      </section>
+      <section className="content-section">
+        <h2>What you can manage</h2>
+        <div className="capability-grid">
           {[
             [
-              "Contract activity",
-              "Review the recorded services, values, and timing behind your commission calculations.",
+              "Contract records",
+              "Recorded services, deal values, and relevant dates give each calculation its context.",
             ],
             [
-              "Earnings visibility",
-              "Understand upfront and recurring commissions with a clearer view of the components.",
+              "Upfront & recurring earnings",
+              "See the components behind a commission total, including upfront and recurring amounts.",
             ],
             [
-              "Dated payout schedules",
-              "See upcoming pay cycles and keep commission amounts separate from base salary.",
+              "Payout schedules",
+              "Review commissions for a selected pay date. Keep commissions separate from base salary.",
             ],
             [
-              "Forecast scenarios",
-              "Explore how fees, rates, and deal volume affect projected commissions under selected assumptions.",
-            ],
-            [
-              "Shareable reports",
-              "Select a payout date and download a commission summary for review and discussion.",
-            ],
-            [
-              "A setup built around you",
-              "Start with a review of your commission rules, data sources, and reporting process.",
+              "Reports & forecasts",
+              "Download dated summaries and explore scenarios using selected fees, rates, and deal volumes.",
             ],
           ].map(([title, text]) => (
             <article key={title}>
@@ -98,23 +69,33 @@ export default function ProductPage() {
           ))}
         </div>
       </section>
-      <section className="shell product-next-pages section">
-        <p className="eyebrow">Go further into the product</p>
-        <div className="product-page-links">
-          {productPages.slice(1).map((page) => (
-            <Link key={page.href} href={page.href}>
-              <h3>{page.label}</h3>
-              <p>{page.description}</p>
-              <span aria-hidden="true">↗</span>
-            </Link>
-          ))}
-        </div>
+      <section className="content-section audience-section">
+        <h2>Who it helps</h2>
+        <dl>
+          <div>
+            <dt>Sales</dt>
+            <dd>
+              Understand which contracts and earning components make up a
+              commission.
+            </dd>
+          </div>
+          <div>
+            <dt>Finance</dt>
+            <dd>
+              Check the calculation and payout timing, then prepare a dated
+              summary for review.
+            </dd>
+          </div>
+          <div>
+            <dt>Leadership</dt>
+            <dd>
+              Consider scheduled commissions alongside forecast scenarios.
+            </dd>
+          </div>
+        </dl>
       </section>
-      <section className="faq section shell">
-        <div className="faq-heading">
-          <p className="eyebrow">Sales Commission / common questions</p>
-          <h2>What you may want to know.</h2>
-        </div>
+      <section className="content-section faq">
+        <h2>Common product questions</h2>
         <div className="faq-list">
           {faqs.map((faq) => (
             <details key={faq.q}>
@@ -126,8 +107,15 @@ export default function ProductPage() {
             </details>
           ))}
         </div>
+        <Link className="text-link" href="/contact/">
+          Have another question? Contact us →
+        </Link>
       </section>
-      <PageInvitation />
-    </main>
+      <NextPage
+        href="/sales-commission/how-it-works/"
+        title="How it works"
+        text="Follow the information from the source contract to the scheduled payout."
+      />
+    </ProductLayout>
   );
 }

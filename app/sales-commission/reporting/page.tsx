@@ -1,118 +1,63 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ProductNavigation } from "@/components/product-navigation";
-import { PageInvitation } from "@/components/page-invitation";
+import { ProductLayout } from "@/components/product-layout";
+import { NextPage } from "@/components/next-page";
+import { ReportExplorer } from "@/components/report-explorer";
 export const metadata: Metadata = {
-  title: "Commission Reporting & Forecasts",
+  title: "Commission Reports & Forecasts",
   description:
-    "Explore earnings visibility, dated payout summaries, and forecast scenarios in Sales Commission.",
+    "Review commission earnings, dated payout summaries, and forecast scenarios for sales and finance.",
   alternates: { canonical: "/sales-commission/reporting/" },
 };
 export default function ReportingPage() {
   return (
-    <main id="main-content" className="product-detail-page">
-      <ProductNavigation current="/sales-commission/reporting/" />
-      <section className="page-intro shell">
-        <p className="eyebrow">Sales Commission / reporting & forecasts</p>
-        <h1>
-          Know which numbers
-          <br />
-          you’re <em>looking at.</em>
-        </h1>
-        <p>
-          Earned commissions, scheduled payouts, and forecast scenarios answer
-          different questions. Keep those distinctions visible when your team
-          reviews the picture.
-        </p>
-      </section>
-      <section className="shell reporting-views">
-        <article>
-          <div className="report-label">Earnings</div>
-          <div>
-            <h2>What the recorded activity represents.</h2>
+    <ProductLayout
+      current="/sales-commission/reporting/"
+      title="Commission reports & forecasts"
+      description="See what has been earned, what is scheduled for payment, and what might happen under different assumptions."
+    >
+      <ReportExplorer />
+      <section className="content-section">
+        <h2>Use the right view for the question.</h2>
+        <div className="report-use-list">
+          <article>
+            <h3>“How was this commission calculated?”</h3>
             <p>
-              Review contract activity and the components behind upfront and
-              recurring commissions. The amount should stay connected to the
-              underlying services, values, and timing.
+              Review earnings with the underlying contract, services, and
+              upfront or recurring components.
             </p>
-            <ul>
-              <li>Contract and service context.</li>
-              <li>Upfront and recurring components.</li>
-              <li>The basis for explaining the total.</li>
-            </ul>
-          </div>
-        </article>
-        <article>
-          <div className="report-label">Payouts</div>
-          <div>
-            <h2>What is scheduled for a selected date.</h2>
+            <span>Earnings view</span>
+          </article>
+          <article>
+            <h3>“What is scheduled for this pay date?”</h3>
             <p>
-              Choose a payout date and download a commission summary for review
-              and discussion. Keep commission amounts separate from base salary
-              so the figures are easier to interpret.
+              Select a payout date and download a commission summary to support
+              review and discussion.
             </p>
-            <ul>
-              <li>Dated commission schedules.</li>
-              <li>A summary for the selected payout date.</li>
-              <li>Context for finance and sales conversations.</li>
-            </ul>
-          </div>
-        </article>
-        <article>
-          <div className="report-label">Forecasts</div>
-          <div>
-            <h2>What changes under your assumptions.</h2>
+            <span>Payout summary</span>
+          </article>
+          <article>
+            <h3>“What happens if our sales assumptions change?”</h3>
             <p>
-              Explore how fees, rates, and deal volume affect projected
-              commissions. A forecast is a scenario, rather than a promise of
-              earned income or a payment instruction.
+              Explore fees, rates, and deal-volume scenarios. The results depend
+              on the assumptions entered.
             </p>
-            <ul>
-              <li>Selected rate and fee assumptions.</li>
-              <li>Deal-volume scenarios.</li>
-              <li>Projected results considered beside scheduled amounts.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-      <section className="reporting-example">
-        <div className="shell">
-          <div>
-            <p className="eyebrow">Illustrative calculation</p>
-            <h2>
-              The same number can have
-              <br />a different meaning.
-            </h2>
-            <p>
-              $12,000 × 8% = $960. That could be a commission calculation based
-              on recorded activity, or a projection based on an assumed deal.
-              The source and status matter.
-            </p>
-          </div>
-          <dl>
-            <div>
-              <dt>Recorded activity</dt>
-              <dd>Review the agreement and earning components.</dd>
-            </div>
-            <div>
-              <dt>Scheduled payout</dt>
-              <dd>Review the relevant date and payment terms.</dd>
-            </div>
-            <div>
-              <dt>Forecast scenario</dt>
-              <dd>Review the assumptions used in the projection.</dd>
-            </div>
-          </dl>
+            <span>Forecast view</span>
+          </article>
         </div>
       </section>
-      <section className="shell section product-related">
-        <p className="eyebrow">The setup behind the reporting</p>
-        <Link href="/sales-commission/implementation/">
-          <h2>Build the view around your rules.</h2>
-          <p>See what we discuss before implementation →</p>
-        </Link>
-      </section>
-      <PageInvitation />
-    </main>
+      <aside className="review-callout">
+        <h2>Keep forecasts separate from earned amounts.</h2>
+        <p>
+          A projected commission is a planning scenario. An earned commission
+          comes from recorded activity. A payout schedule adds the payment
+          timing.
+        </p>
+      </aside>
+      <NextPage
+        href="/sales-commission/implementation/"
+        title="Setup & implementation"
+        text="See the rules, records, and responsibilities we discuss before implementation."
+      />
+    </ProductLayout>
   );
 }

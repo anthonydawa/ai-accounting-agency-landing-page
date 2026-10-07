@@ -1,6 +1,6 @@
 # AI Accounting Agency Website
 
-A Sales Commission-led redesign using the existing navy, teal, coral, logo, and founder portrait. Editorial typography and accounting working papers stay at the center, with distinct product, workflow, founder, services, journal, and consultation sections on predominantly light backgrounds.
+A Sales Commission-led website using the existing navy, teal, coral, logo, and founder portrait. Direct navigation, clear page titles, visible section menus, and concrete examples explain the product on predominantly white backgrounds. Each page has a defined purpose instead of repeating the same broad introduction.
 
 ## Preview and validation
 
@@ -25,11 +25,11 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 ## Site structure
 
 - Home: a concise Sales Commission introduction, links into the product directory, founder expertise, secondary services, and recent articles.
-- `/sales-commission/`: product overview, interactive Sales/Finance/Leadership perspectives, capabilities, and FAQs. Team views support pointer and keyboard selection; examples are illustrative rather than live product data.
+- `/sales-commission/`: product overview, capabilities, audience needs, and FAQs.
 - `/sales-commission/how-it-works/`: contract-to-payout workflow and a worked commission example.
-- `/sales-commission/reporting/`: earnings, payout summaries, and forecast scenarios.
+- `/sales-commission/reporting/`: an interactive earnings, payout-summary, and forecast example with pointer and keyboard tab selection. All example data is illustrative, rather than a live product connection.
 - `/sales-commission/implementation/`: commission rules, source information, review responsibilities, and setup scope.
-- `/services/`: services directory, with Sales Commission featured first.
+- `/services/`: a separate accounting services directory with specific needs and capabilities for each area. Sales Commission remains the lead offer on the homepage and main navigation.
 - `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: expanded service pages covering inputs, review focus, outputs, capabilities, and their connection to commissions. Existing service paths are preserved.
 - `/about-us/`: company mission, founder background, and the agency's product focus.
 - `/contact/`: booking, direct contact details, email preparation form, and information to bring to a consultation.
@@ -37,7 +37,7 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 - `/blog/[slug]/`: full local articles generated from the content collection.
 - Sitemap and a generated PNG social preview.
 
-The shared navigation includes product and service directories with active-page indicators, keyboard dismissal, and mobile expansion. Each product page also includes a local navigation bar. The homepage leads visitors into these pages rather than duplicating their full content.
+Main navigation links lead directly to pages without dropdown menus. Product and service pages have separate section menus with prominent active-page states and descriptive labels. Breadcrumbs and literal titles identify the current page. On mobile, the section menu becomes a two-column directory; the primary menu supports Escape dismissal and closes after navigation. Page transitions reset the scroll position and move keyboard focus to the new title. Product pages link forward through overview, workflow, reports, and setup.
 
 ## Adding articles over time
 

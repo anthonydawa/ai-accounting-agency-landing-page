@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { services } from "@/lib/site";
 import { serviceDetails } from "@/lib/service-details";
-import { PageInvitation } from "@/components/page-invitation";
+import { PageContext } from "@/components/page-context";
+import { ServiceNavigation } from "@/components/service-navigation";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return services.map((service) => ({ service: service.slug }));
@@ -31,94 +32,79 @@ export default async function ServicePage({
   const record = services.find((item) => item.slug === service);
   if (!record) notFound();
   const detail = serviceDetails[service];
+  const index = services.findIndex((item) => item.slug === service);
   return (
-    <main id="main-content" className={`service-page service-${service}`}>
-      <section className="service-page-hero shell">
-        <div>
-          <Link className="back-link" href="/services/">
-            ← All services
-          </Link>
-          <p className="eyebrow">The broader practice</p>
-          <h1>{record.title}</h1>
-          <p className="service-deck">{record.description}</p>
-          <p>{detail.introduction}</p>
-          <Link className="button" href="/contact/">
-            Discuss this service
-          </Link>
-        </div>
-        <aside className="service-brief" aria-label="Service at a glance">
-          <p className="eyebrow">The work at a glance</p>
-          <dl>
-            <div>
-              <dt>Source information</dt>
-              <dd>{detail.inputs}</dd>
-            </div>
-            <div>
-              <dt>Review focus</dt>
-              <dd>{detail.review}</dd>
-            </div>
-            <div>
-              <dt>The working output</dt>
-              <dd>{detail.output}</dd>
-            </div>
-          </dl>
-          <p>The scope and connected tools are agreed around your business.</p>
-        </aside>
-      </section>
-      <section className="service-context">
-        <div className="shell">
-          <p className="eyebrow">Why the process matters</p>
-          <p>{detail.context}</p>
-        </div>
-      </section>
-      <section className="shell section service-capabilities">
-        <div className="section-heading">
-          <p className="eyebrow">Where we can help</p>
-          <h2>Workflows within this service.</h2>
-        </div>
-        {record.items.map((item, index) => (
-          <article key={item.title} className="capability-entry">
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-            <ul>
-              {detail.capabilities[index].map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
-      <section className="service-product-connection">
-        <div className="shell">
-          <div>
-            <p className="eyebrow">How this relates to our first product</p>
-            <h2>Sales Commission in the wider picture.</h2>
-            <p>{detail.connection}</p>
-          </div>
-          <Link className="button" href="/sales-commission/">
-            Explore Sales Commission
-          </Link>
-        </div>
-      </section>
-      <section className="shell section related-services">
-        <p className="eyebrow">Other areas of the practice</p>
-        <div>
-          {services
-            .filter((item) => item.slug !== service)
-            .map((item) => (
-              <Link key={item.slug} href={`/${item.slug}/`}>
-                <h3>{item.title}</h3>
-                <span>Explore this service ↗</span>
+    <main
+      id="main-content"
+      className={`service-detail-page service-tone-${index}`}
+    >
+      <div className="shell">
+        <PageContext
+          current={record.title}
+          parent={{ label: "Accounting services", href: "/services/" }}
+        />
+        <div className="section-layout">
+          <ServiceNavigation current={`/${service}/`} />
+          <div className="section-content">
+            <header className="detail-heading service-detail-heading">
+              <p className="page-label">Accounting services</p>
+              <h1>{record.title}</h1>
+              <p className="page-description">{record.description}</p>
+              <Link className="button button-outline" href="/contact/">
+                Discuss this service →
               </Link>
-            ))}
+            </header>
+            <section className="service-summary">
+              <div>
+                <h2>What we work with</h2>
+                <p>{detail.inputs}.</p>
+              </div>
+              <div>
+                <h2>What the process produces</h2>
+                <p>{detail.output}.</p>
+              </div>
+            </section>
+            <section className="content-section service-work">
+              <h2>What this service covers</h2>
+              {record.items.map((item, i) => (
+                <article key={item.title}>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                  <ul>
+                    {detail.capabilities[i].map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </section>
+            <aside className="service-review">
+              <p className="page-label">Where review matters</p>
+              <h2>{detail.review}</h2>
+              <p>{detail.context}</p>
+            </aside>
+            <section className="content-section service-commission">
+              <h2>How this connects to Sales Commission</h2>
+              <p>{detail.connection}</p>
+              <Link className="text-link" href="/sales-commission/">
+                View the commission product →
+              </Link>
+            </section>
+            <section className="implementation-scope">
+              <h2>Let’s define the work your business needs.</h2>
+              <p>
+                We confirm your systems, source information, review steps, and
+                required outputs before agreeing a scope.
+              </p>
+              <Link className="button" href="/contact/">
+                Contact the agency →
+              </Link>
+            </section>
+          </div>
         </div>
-      </section>
-      <PageInvitation
-        title="Let’s look at the work that needs attention."
-        text="Tell us about your systems, handoffs, and recurring tasks. We’ll discuss a practical scope for your business."
-      />
+      </div>
     </main>
   );
 }
