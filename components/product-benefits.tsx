@@ -21,7 +21,7 @@ const views = [
     title: "The context for your review.",
     text: "Bring the commission basis, amounts, and payout timing together. Download a summary for the selected pay date to support your review.",
     fields: [
-      ["Calculation basis", "$12,000 Ã— 8%"],
+      ["Calculation basis", "$12,000 × 8%"],
       ["Commission amount", "$960.00"],
       ["Payment timing", "Per agreement"],
     ],
@@ -60,14 +60,14 @@ export function ProductBenefits() {
             <em>Different questions.</em>
           </h2>
           <p>
-            Choose your teamâ€™s perspective to see where the product fits.
+            Choose your team’s perspective to see where the product fits.
           </p>
         </div>
         <div className="benefits-stage">
           <div
             className="team-tabs"
             role="tablist"
-            aria-label="Your teamâ€™s commission view"
+            aria-label="Your team’s commission view"
             aria-orientation="vertical"
           >
             {views.map((item, index) => (
@@ -100,7 +100,7 @@ export function ProductBenefits() {
                 <span>{item.team}</span>
                 <strong>{item.question}</strong>
                 <span className="team-tab-arrow" aria-hidden="true">
-                  â†’
+                  →
                 </span>
               </button>
             ))}
