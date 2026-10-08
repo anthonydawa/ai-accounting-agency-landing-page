@@ -68,6 +68,10 @@ The contact section uses the original Google booking link and offers an email dr
 
 ## Deployment and domain migration
 
+The review site is deployed on the existing Hostinger plan at https://orangered-tiger-215159.hostingersite.com/ (October 8, 2026). It is a separate PHP/HTML site serving the static export, with no change to the main domain or Wix site. Build with `NEXT_PUBLIC_SITE_URL` set to that temporary origin, an empty `NEXT_PUBLIC_BASE_PATH`, and `GITHUB_ACTIONS=false`. Upload the contents of `out/` at the document root, including `_next/` and route directories. The current deployment is a manual upload; GitHub pushes do not update Hostinger automatically.
+
+The preview package adds an `.htaccess` with `DirectoryIndex index.html`, `ErrorDocument 404 /404.html`, and an `X-Robots-Tag: noindex, nofollow` header under `mod_headers`. Hostinger also serves its temporary-domain robots policy. Remove the preview indexing restriction when preparing the final production deployment. All 13 routes, referenced assets, HTTPS, the response header, the custom 404, and the live calculator/navigation were verified after upload.
+
 The existing GitHub Pages workflow deploys only pushes to `main`. Review work stays on `codex/sales-commission-website-redesign` until it is merged. The workflow sets the repository base path and now runs the static link checks before publishing.
 
 For deployment at the root of aiaccountingagency.com, build without `GITHUB_ACTIONS=true` and set `NEXT_PUBLIC_SITE_URL=https://www.aiaccountingagency.com`. The site exports static files and can use the eventual selected hosting provider.
