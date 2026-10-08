@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "from-contract-to-commission",
+    "title": "From contract to commission: a clearer path to payout",
+    "category": "Sales Commission",
+    "excerpt": "See how contract details, commission rules, payout timing, and human review fit into one connected workflow.",
+    "date": "2026-10-06",
+    "readTime": "3 min read",
+    "author": "AI Accounting Agency",
+    "published": true,
+    "sections": [
+      {
+        "heading": "Start with the agreement",
+        "paragraphs": [
+          "A commission calculation starts before anyone opens a spreadsheet. It starts with the agreement: the services sold, the contract value, the salesperson, and the terms that determine when a commission becomes eligible.",
+          "When those details are spread across documents and trackers, each payout cycle can require another round of checking. A connected workflow brings the relevant information together so the team has a consistent starting point."
+        ]
+      },
+      {
+        "heading": "Make the rules explicit",
+        "paragraphs": [
+          "Upfront and recurring commissions can follow different rules. Rates, contract terms, and payout timing need to be clear before a calculation is useful. The goal is to reflect the compensation structure your business has agreed to, with enough context for a reviewer to understand the result.",
+          "Missing or conflicting information needs attention. A workflow should surface those exceptions for review instead of quietly turning an assumption into a payout record."
+        ]
+      },
+      {
+        "heading": "Give the team a useful view",
+        "paragraphs": [
+          "A commission workspace connects contract activity with earnings, dated payout schedules, and reports. That gives sales and finance a shared way to discuss what has been calculated and what is coming next.",
+          "Forecasts serve a different purpose: they help explore possible outcomes under selected assumptions. Keeping forecasts distinct from recorded earnings and scheduled payouts helps the team interpret each view correctly."
+        ]
+      },
+      {
+        "heading": "Keep financial judgment in the process",
+        "paragraphs": [
+          "Automation can organize information and handle repeatable calculations. Your team still needs to review exceptions, confirm the rules, and control payout decisions.",
+          "The best place to begin is your current process. Identify where contract information arrives, how commission rules are recorded, and which checks happen before a payout. Those details guide a practical implementation of Sales Commission."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "when-rapid-growth-creates-operational-risk",
+    "title": "When Rapid Growth Creates Operational Risk",
+    "category": "Business Operations",
+    "excerpt": "How growth can expose unclear ownership and disconnected processes inside an otherwise healthy business.",
+    "date": "2026-09-22",
+    "readTime": "8 min read",
+    "author": "AI Accounting Agency",
+    "published": true,
+    "externalUrl": "https://www.aiaccountingagency.com/post/when-rapid-growth-creates-operational-risk"
+  },
+  {
+    "slug": "how-ai-can-connect-departments-and-reveal-new-business-metrics",
+    "title": "How AI Can Connect Departments and Reveal New Business Metrics",
+    "category": "AI & Automation",
+    "excerpt": "A look at connecting financial and operational information so teams can understand the business sooner.",
+    "date": "2026-08-17",
+    "readTime": "3 min read",
+    "author": "AI Accounting Agency",
+    "published": true,
+    "externalUrl": "https://www.aiaccountingagency.com/post/how-ai-can-connect-departments-and-reveal-new-business-metrics"
+  },
+  {
+    "slug": "how-ai-is-changing-job-roles-and-what-employers-should-watch-for",
+    "title": "How AI Is Changing Job Roles and What Employers Should Watch For",
+    "category": "AI & Automation",
+    "excerpt": "What evolving responsibilities can mean for employers as automation becomes part of everyday work.",
+    "date": "2026-07-09",
+    "readTime": "2 min read",
+    "author": "AI Accounting Agency",
+    "published": true,
+    "externalUrl": "https://www.aiaccountingagency.com/post/how-ai-is-changing-job-roles-and-what-employers-should-watch-for"
+  },
+  {
+    "slug": "angela-hernandez-featured-in-the-mom-economy-magazine-for-ambition-motherhood-and-innovation",
+    "title": "Angela Hernandez Featured in The Mom Economy Magazine",
+    "category": "Press",
+    "excerpt": "A feature on Angela’s experience building a company through motherhood and creating systems that give people time back.",
+    "date": "2026-07-03",
+    "readTime": "1 min read",
+    "author": "AI Accounting Agency",
+    "published": true,
+    "externalUrl": "https://www.aiaccountingagency.com/post/angela-hernandez-featured-in-the-mom-economy-magazine-for-ambition-motherhood-and-innovation"
+  }
+]
