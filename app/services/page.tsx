@@ -3,6 +3,7 @@ import Link from "next/link";
 import { services } from "@/lib/site";
 import { PageContext } from "@/components/page-context";
 import { PageInvitation } from "@/components/page-invitation";
+import { ServiceVisual } from "@/components/service-visual";
 export const metadata: Metadata = {
   title: "Accounting Automation Services",
   description:
@@ -52,10 +53,7 @@ export default function ServicesPage() {
               key={service.slug}
               className={`service-selection-item service-tone-${index}`}
             >
-              <div className="service-category-mark" aria-hidden="true">
-                {["↳", "≋", "→"][index]}
-              </div>
-              <div>
+              <div className="service-selection-copy">
                 <p className="service-problem">{problems[index]}</p>
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
@@ -66,11 +64,14 @@ export default function ServicesPage() {
                   View this service →
                 </Link>
               </div>
-              <ul>
-                {service.items.map((item) => (
-                  <li key={item.title}>{item.title}</li>
-                ))}
-              </ul>
+              <div className="service-selection-visual">
+                <ServiceVisual service={service.slug} compact />
+                <ul>
+                  {service.items.map((item) => (
+                    <li key={item.title}>{item.title}</li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductLayout } from "@/components/product-layout";
 import { bookingUrl } from "@/lib/site";
+import { SetupChecklist } from "@/components/setup-checklist";
 export const metadata: Metadata = {
   title: "Sales Commission Setup & Implementation",
   description:
@@ -33,13 +34,7 @@ export default function SetupPage() {
           </a>
         </div>
         <div className="prepare-list">
-          <h3>Useful things to bring</h3>
-          <ul>
-            <li>A sample contract or service agreement</li>
-            <li>Your commission rates and payout terms</li>
-            <li>The tools or spreadsheets you use today</li>
-            <li>A report your team needs each pay cycle</li>
-          </ul>
+          <SetupChecklist />
         </div>
       </section>
       <section className="content-section">

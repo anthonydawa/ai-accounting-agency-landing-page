@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductLayout } from "@/components/product-layout";
 import { NextPage } from "@/components/next-page";
+import { CommissionJourney } from "@/components/commission-journey";
 export const metadata: Metadata = {
   title: "How Sales Commission Works",
   description:
@@ -14,13 +15,7 @@ export default function WorkflowPage() {
       title="From contract to payout"
       description="A commission has a source, a calculation, and a payment schedule. Here is how those pieces connect."
     >
-      <div className="workflow-example-note">
-        <span className="sample-tag">Illustrative example</span>
-        <p>
-          One $12,000 contract. An agreed 8% commission rate. Actual rules and
-          payment terms depend on your agreement.
-        </p>
-      </div>
+      <CommissionJourney trace />
       <section className="workflow-timeline" aria-label="Commission workflow">
         <article>
           <div className="timeline-label">

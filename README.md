@@ -24,11 +24,11 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 
 ## Site structure
 
-- Home: a concise Sales Commission introduction, links into the product directory, founder expertise, secondary services, and recent articles.
+- Home: a concise Sales Commission introduction with an animated agreement-to-payout illustration, links into the product directory, founder expertise, secondary services, and recent articles.
 - `/sales-commission/`: product overview, capabilities, audience needs, and FAQs.
-- `/sales-commission/how-it-works/`: contract-to-payout workflow and a worked commission example.
-- `/sales-commission/reporting/`: an interactive earnings, payout-summary, and forecast example with pointer and keyboard tab selection. All example data is illustrative, rather than a live product connection.
-- `/sales-commission/implementation/`: commission rules, source information, review responsibilities, and setup scope.
+- `/sales-commission/how-it-works/`: a connected, selectable contract-to-payout illustration and detailed workflow explanations.
+- `/sales-commission/reporting/`: earnings, payout-summary, and forecast tabs with pointer and keyboard selection. Forecast opens first with sliders for commission rate and deal count, an updating total, and a comparison with the starting assumptions. All example data is illustrative, rather than a live product connection.
+- `/sales-commission/implementation/`: commission rules, source information, review responsibilities, setup scope, and an optional interactive demo-preparation checklist. Checklist selections stay only in the current page state and are not submitted or saved.
 - `/services/`: a separate accounting services directory with specific needs and capabilities for each area. Sales Commission remains the lead offer on the homepage and main navigation.
 - `/sales-accounting/`, `/financial-reporting/`, `/payroll-business/`: expanded service pages covering inputs, review focus, outputs, capabilities, and their connection to commissions. Existing service paths are preserved.
 - `/about-us/`: company mission, founder background, and the agency's product focus.
@@ -38,6 +38,12 @@ Open http://localhost:3101. The preview serves the exported `out/` directory. `P
 - Sitemap and a generated PNG social preview.
 
 Main navigation links lead directly to pages without dropdown menus. Product and service pages have separate section menus with prominent active-page states and descriptive labels. Breadcrumbs and literal titles identify the current page. On mobile, the section menu becomes a two-column directory; the primary menu supports Escape dismissal and closes after navigation. Page transitions reset the scroll position and move keyboard focus to the new title. Product pages link forward through overview, workflow, reports, and setup.
+
+## Visuals and motion
+
+The homepage uses a paper agreement, rate memo, earnings ticket, and payout calendar to explain one commission. The workflow page presents the same example as a connected trace. Both play once when visible, offer stage selection and Pause/Replay controls, and stop when scrolled out of view. Reduced-motion preferences disable autoplay and decorative transitions; all explanations remain available.
+
+Accounting services use three distinct process illustrations: sale-to-deposit reconciliation, plan-versus-actual variance, and payroll handoffs. Their short entrance animations run once. The forecast comparison responds to slider changes, while the preparation checklist updates a progress ring. The visuals use CSS and SVG with no external animation dependency.
 
 ## Adding articles over time
 

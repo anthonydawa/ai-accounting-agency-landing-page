@@ -5,6 +5,7 @@ import { services } from "@/lib/site";
 import { serviceDetails } from "@/lib/service-details";
 import { PageContext } from "@/components/page-context";
 import { ServiceNavigation } from "@/components/service-navigation";
+import { ServiceVisual } from "@/components/service-visual";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return services.map((service) => ({ service: service.slug }));
@@ -54,6 +55,7 @@ export default async function ServicePage({
                 Discuss this service →
               </Link>
             </header>
+            <ServiceVisual service={service} />
             <section className="service-summary">
               <div>
                 <h2>What we work with</h2>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CommissionRecord } from "@/components/commission-record";
+import { CommissionJourney } from "@/components/commission-journey";
 import { PageInvitation } from "@/components/page-invitation";
 import { ArticleCard } from "@/components/article-card";
 import { articles } from "@/lib/articles";
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home-example">
-          <CommissionRecord />
+          <CommissionJourney />
           <p className="example-caption">
             The amount has an explanation. The payout has a date.
           </p>

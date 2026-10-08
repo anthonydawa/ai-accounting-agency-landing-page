@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import { ForecastSimulator } from "@/components/forecast-simulator";
 const views = [
   {
     label: "Earnings",
@@ -35,7 +36,7 @@ const views = [
   },
 ];
 export function ReportExplorer() {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(2);
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
   return (
     <section
@@ -94,36 +95,42 @@ export function ReportExplorer() {
             </div>
             <span className="report-status">{view.status}</span>
           </div>
-          <div className="report-table-wrap">
-            <table>
-              <caption className="sr-only">{view.label} example</caption>
-              <thead>
-                <tr>
-                  {view.columns.map((column) => (
-                    <th key={column} scope="col">
-                      {column}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {view.values.map((value, i) => (
-                    <td key={view.columns[i]}>{value}</td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <dl className="report-mobile-data">
-            {view.columns.map((column, index) => (
-              <div key={column}>
-                <dt>{column}</dt>
-                <dd>{view.values[index]}</dd>
+          {index === 2 ? (
+            <ForecastSimulator />
+          ) : (
+            <>
+              <div className="report-table-wrap">
+                <table>
+                  <caption className="sr-only">{view.label} example</caption>
+                  <thead>
+                    <tr>
+                      {view.columns.map((column) => (
+                        <th key={column} scope="col">
+                          {column}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {view.values.map((value, i) => (
+                        <td key={view.columns[i]}>{value}</td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            ))}
-          </dl>
-          <p className="report-note">{view.note}</p>
+              <dl className="report-mobile-data">
+                {view.columns.map((column, index) => (
+                  <div key={column}>
+                    <dt>{column}</dt>
+                    <dd>{view.values[index]}</dd>
+                  </div>
+                ))}
+              </dl>
+            </>
+          )}
+          {index !== 2 && <p className="report-note">{view.note}</p>}
         </div>
       ))}
     </section>
