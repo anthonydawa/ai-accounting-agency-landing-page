@@ -13,8 +13,7 @@ export default function Home() {
       <section className="home-hero shell">
         <div className="home-hero-copy">
           <p className="page-label">
-            <span className="status-dot" aria-hidden="true" /> Our first product
-            · Sales Commission
+            <span className="status-dot" aria-hidden="true" /> Sales Commission
           </p>
           <h1>
             Sales commissions,
@@ -168,8 +167,9 @@ export default function Home() {
             </h2>
             <p>
               We combine accounting expertise with automation to improve
-              financial workflows. Sales Commission is our first product; our
-              broader practice supports the work around it.
+              financial workflows. Sales Commission connects contracts,
+              earnings, and payouts; our broader practice supports the work
+              around it.
             </p>
             <Link className="text-link" href="/about-us/">
               Meet the agency →

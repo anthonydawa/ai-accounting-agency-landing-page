@@ -28,7 +28,7 @@ export default function AboutPage() {
               accounting work more dependable.
             </p>
             <p>
-              Our first product, Sales Commission, brings contract details,
+              Sales Commission brings contract details,
               earnings, and payout schedules into one workspace. Our services
               support accounting operations, financial reporting, payroll, and
               business processes.
